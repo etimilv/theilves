@@ -124,7 +124,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Robot
 .about-name{font-size:24px;font-weight:700;color:var(--text-primary)}
 .about-version{font-size:13px;color:var(--text-secondary);margin-top:5px}
 .about-desc{font-size:14px;color:var(--text-primary);margin-top:20px;line-height:1.6}
-.about-credit{font-size:12px;color:var(--text-secondary);margin-top:20px}
+.about-credit{font-size:12px;color:var(--text-secondary);margin-top:20px}.blog-page{max-width:640px;margin:0 auto;padding:40px 20px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',sans-serif;color:#1d1d1f}.blog-header{margin-bottom:50px;text-align:center}.blog-header h1{font-size:36px;font-weight:700;letter-spacing:-0.5px;margin-bottom:8px}.blog-header .subtitle{font-size:14px;color:#86868b}.blog-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.08);margin-bottom:40px}.blog-nav a{font-size:13px;color:var(--accent-blue);text-decoration:none;cursor:pointer}.blog-nav a:hover{text-decoration:underline}.blog-nav .nav-links{display:flex;gap:20px}.blog-nav .nav-links span{font-size:13px;color:#86868b;cursor:pointer}.blog-nav .nav-links span:hover{color:#1d1d1f}.blog-post{margin-bottom:50px}.blog-post .post-meta{font-size:12px;color:#86868b;margin-bottom:8px}.blog-post h2{font-size:22px;font-weight:600;margin-bottom:12px;letter-spacing:-0.3px}.blog-post h2 a{color:#1d1d1f;text-decoration:none}.blog-post h2 a:hover{color:var(--accent-blue)}.blog-post p{font-size:15px;line-height:1.7;color:#1d1d1f;margin-bottom:12px}.blog-post .read-more{font-size:13px;color:var(--accent-blue);text-decoration:none;cursor:pointer}.blog-post .read-more:hover{text-decoration:underline}.blog-footer{padding:40px 0;border-top:1px solid rgba(0,0,0,0.08);margin-top:60px;text-align:center;font-size:12px;color:#86868b}
 ::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.2);border-radius:4px}
@@ -182,6 +182,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Robot
 <div class="dock-item" ondblclick="openApp('markets')">
 <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#34c759"/><path d="M16 44h8v-12h-8v12zm12 0h8V28h-8v16zm12 0h8V20h-8v24zm12 0h8V32h-8v12z" fill="white"/></svg>
 <span class="tooltip">Markets</span>
+</div>
+<div class="dock-item" ondblclick="openApp('browser')">
+<svg viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#007AFF"/><circle cx="32" cy="32" r="18" fill="none" stroke="white" stroke-width="3"/><ellipse cx="32" cy="32" rx="8" ry="18" fill="none" stroke="white" stroke-width="2"/><line x1="14" y1="32" x2="50" y2="32" stroke="white" stroke-width="2"/><circle cx="32" cy="32" r="3" fill="white"/></svg>
+<span class="tooltip">Blog</span>
 </div>
 <div style="width:1px;height:40px;background:rgba(255,255,255,0.25);border-radius:1px;margin:6px 4px"></div>
 <div class="dock-item" ondblclick="openApp('about')">
@@ -260,6 +264,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Robot
 </div>
 <div class="resize-handle"></div>
 </div>
+<div id="window-browser" class="window" style="width:750px;height:550px;top:80px;left:120px">
+<div class="window-header"><div class="window-controls"><div class="window-btn close" onclick="closeWindow('browser')"></div><div class="window-btn minimize" onclick="minimizeWindow('browser')"></div><div class="window-btn maximize" onclick="maximizeWindow('browser')"></div></div><div class="window-title">Blog</div></div>
+<div class="window-content" id="browser-content" style="overflow-y:auto;height:100%">
+<div id="blog-page"></div>
+</div>
+<div class="resize-handle"></div>
+</div>
 <div id="window-finder" class="window" style="width:700px;height:450px;top:60px;left:80px">
 <div class="window-header"><div class="window-controls"><div class="window-btn close" onclick="closeWindow('finder')"></div><div class="window-btn minimize" onclick="minimizeWindow('finder')"></div><div class="window-btn maximize" onclick="maximizeWindow('finder')"></div></div><div class="window-title">Finder</div></div>
 <div class="window-content" id="finder-content">
@@ -294,7 +305,31 @@ About This Desktop
 const CONFIG = {
 USER_NAME: 'Timo',
 SECRET_PASSWORD: 'timo',
-FINNHUB_API_KEY: '', // Get free key at https://finnhub.io/register
+FINNHUB_API_KEY: '',
+BLOG: {
+  title: 'Theilves',
+  subtitle: 'Notes on investing, technology, and building things.',
+  posts: [
+    {
+      title: 'Building a Personal Homepage',
+      date: 'March 2026',
+      excerpt: 'I spent the evening building a macOS-style desktop homepage. It started as a fun project to organize my digital life — music, photos, stock portfolio, and a place to write.',
+      content: 'I spent the evening building a macOS-style desktop homepage. It started as a fun project to organize my digital life — music, photos, stock portfolio, and a place to write.\n\nThe stack is simple: one HTML file with vanilla JS and CSS. No frameworks, no build step. Just a desktop that feels familiar.\n\nNext up: adding a proper blog section and maybe a notes app. The goal is to have one place that\'s both useful and nice to look at.'
+    },
+    {
+      title: 'Stock Picking Framework',
+      date: 'March 2026',
+      excerpt: 'After months of researching stocks, I\'ve settled on a framework that works for me: focus on FCF yield, management alignment, and catalysts.',
+      content: 'After months of researching stocks, I\'ve settled on a framework that works for me: focus on FCF yield, management alignment, and catalysts.\n\nFCF yield is the clearest signal of value. A business that generates real cash, not accounting profits. Management alignment means they own stock and are incentivized the same way I am. Catalysts are what turn a good idea into a profitable trade.\n\nThe hardest part isn\'t finding ideas — it\'s waiting for the right price. Patience is the edge.'
+    },
+    {
+      title: 'Hello World',
+      date: 'March 2026',
+      excerpt: 'This is the beginning of my digital space. A place to think out loud about investing, technology, and whatever else is worth writing about.',
+      content: 'This is the beginning of my digital space. A place to think out loud about investing, technology, and whatever else is worth writing about.\n\nI\'m starting with a homepage that doubles as a playground. Over time I\'ll add more here — notes, research, maybe a proper blog.\n\nIf you found this: welcome.'
+    }
+  ]
+}, // Get free key at https://finnhub.io/register
 PHOTO_URLS: [],
 PHOTO_URLS: [],
 MUSIC_TRACKS: [
@@ -348,6 +383,7 @@ function updateClock(){const now=new Date();const days=['Sun','Mon','Tue','Wed',
   if(app==='music'){renderTrackList();return;}
   if(app==='photos'&&!photosUnlocked)return;
   if(app==='markets'&&!marketsUnlocked)return;
+  if(app==='browser'){renderBlog();return;}
 }function closeWindow(app){const win=document.getElementById('window-'+app);if(win)win.style.display='none'}function minimizeWindow(app){const win=document.getElementById('window-'+app);if(win)win.classList.remove('active')}function maximizeWindow(app){const win=document.getElementById('window-'+app);if(win){if(win.style.width==='100%'&&win.style.height==='100%'){win.style.width=win.dataset.width||'700px';win.style.height=win.dataset.height||'500px';win.style.top=win.dataset.top||'50px';win.style.left=win.dataset.left||'100px'}else{win.dataset.width=win.style.width;win.dataset.height=win.style.height;win.dataset.top=win.style.top;win.dataset.left=win.style.left;win.style.width='100%';win.style.height='calc(100vh - 28px)';win.style.top='28px';win.style.left='0'}}}function bringToFront(win){document.querySelectorAll('.window').forEach(w=>w.classList.remove('active'));win.classList.add('active')}document.querySelectorAll('.window-header').forEach(header=>{const win=header.closest('.window');header.addEventListener('mousedown',e=>{if(e.target.classList.contains('window-btn'))return;isDragging=true;activeWindow=win;const rect=win.getBoundingClientRect();windowOffsetX=e.clientX-rect.left;windowOffsetY=e.clientY-rect.top;bringToFront(win)});const resizeHandle=win.querySelector('.resize-handle');if(resizeHandle){resizeHandle.addEventListener('mousedown',e=>{isResizing=true;resizeWindow=win;e.stopPropagation()})}});document.addEventListener('mousemove',e=>{if(isDragging&&activeWindow){activeWindow.style.left=(e.clientX-windowOffsetX)+'px';activeWindow.style.top=(e.clientY-windowOffsetY)+'px'}if(isResizing&&resizeWindow){const rect=resizeWindow.getBoundingClientRect();resizeWindow.style.width=(e.clientX-rect.left)+'px';resizeWindow.style.height=(e.clientY-rect.top)+'px'}});document.addEventListener('mouseup',()=>{isDragging=false;activeWindow=null;isResizing=false;resizeWindow=null});document.querySelectorAll('.dock-item').forEach(item=>{item.addEventListener('click',()=>{item.classList.remove('bounce');void item.offsetWidth;item.classList.add('bounce')})});document.getElementById('desktop').addEventListener('contextmenu',e=>{e.preventDefault();const menu=document.getElementById('context-menu');menu.style.display='block';menu.style.left=e.clientX+'px';menu.style.top=e.clientY+'px'});document.addEventListener('click',()=>{document.getElementById('context-menu').style.display='none'});let audioCtx=null;function createVisualizer(){if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)()}const canvas=document.getElementById('visualizer');canvas.innerHTML='';const bars=12;for(let i=0;i<bars;i++){const bar=document.createElement('div');bar.className='viz-bar';bar.style.height='8px';canvas.appendChild(bar)}if(isPlaying){const interval=setInterval(()=>{if(!isPlaying){clearInterval(interval);return}document.querySelectorAll('.viz-bar').forEach(bar=>{bar.style.height=(Math.random()*30+5)+'px'})},150)}}function renderTrackList(){const list=document.getElementById('trackList');list.innerHTML='';CONFIG.MUSIC_TRACKS.forEach((track,i)=>{const item=document.createElement('div');item.className='track-item'+(i===currentTrack?' active':'');item.innerHTML='<img src="'+track.cover+'" alt=""><div class="track-item-info"><div class="track-item-title">'+track.title+'</div><div class="track-item-artist">'+track.artist+'</div></div><div class="track-item-duration">'+track.duration+'</div>';item.onclick=()=>{currentTrack=i;updateTrackDisplay();renderTrackList()};list.appendChild(item)})}function updateTrackDisplay(){const track=CONFIG.MUSIC_TRACKS[currentTrack];document.getElementById('currentAlbumArt').src=track.cover;document.getElementById('currentTitle').textContent=track.title;document.getElementById('currentArtist').textContent=track.artist;document.getElementById('totalTime').textContent=track.duration}function togglePlay(){isPlaying=!isPlaying;const icon=document.getElementById('playIcon');if(isPlaying){icon.innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';startProgress();createVisualizer()}else{icon.innerHTML='<path d="M8 5v14l11-7L8 5z"/>';stopProgress()}}function startProgress(){const track=CONFIG.MUSIC_TRACKS[currentTrack];const[min,sec]=track.duration.split(':').map(Number);const totalSec=min*60+sec;progress=0;const interval=100;progressInterval=setInterval(()=>{progress+=interval/totalSec*100;if(progress>=100){progress=0;nextTrack()}document.getElementById('progressFill').style.width=progress+'%';const currentSec=Math.floor(progress/100*totalSec);document.getElementById('currentTime').textContent=Math.floor(currentSec/60)+':'+(currentSec%60).toString().padStart(2,'0')},interval)}function stopProgress(){clearInterval(progressInterval)}function nextTrack(){currentTrack=(currentTrack+1)%CONFIG.MUSIC_TRACKS.length;updateTrackDisplay();renderTrackList();if(isPlaying){progress=0;createVisualizer()}}function prevTrack(){currentTrack=(currentTrack-1+CONFIG.MUSIC_TRACKS.length)%CONFIG.MUSIC_TRACKS.length;updateTrackDisplay();renderTrackList();if(isPlaying){progress=0}}function seekTrack(e){const bar=e.currentTarget;const rect=bar.getBoundingClientRect();const percent=(e.clientX-rect.left)/rect.width;const track=CONFIG.MUSIC_TRACKS[currentTrack];const[min,sec]=track.duration.split(':').map(Number);const totalSec=min*60+sec;progress=percent*100;document.getElementById('progressFill').style.width=progress+'%';const currentSec=Math.floor(percent*totalSec);document.getElementById('currentTime').textContent=Math.floor(currentSec/60)+':'+(currentSec%60).toString().padStart(2,'0')}function setVolume(val){}function unlockPhotos(){const pw=document.getElementById('photos-password').value;if(pw===CONFIG.SECRET_PASSWORD){photosUnlocked=true;renderPhotos()}else{alert('Incorrect password')}}function unlockMarkets(){const pw=document.getElementById('markets-password').value;if(pw===CONFIG.SECRET_PASSWORD){marketsUnlocked=true;renderMarkets()}else{alert('Incorrect password')}}function renderPhotos(){const content=document.getElementById('photos-content');if(CONFIG.PHOTO_URLS.length===0){content.innerHTML='<div style="text-align:center;color:var(--text-secondary);padding:40px"><p>No photos configured.</p><p style="margin-top:10px;font-size:12px">Add photo URLs to the PHOTO_URLS array in the CONFIG.</p></div>'}else{let html='<div class="photos-grid">';CONFIG.PHOTO_URLS.forEach(url=>{html+='<div class="photo-item" onclick="openLightbox(\''+url+'\')"><img src="'+url+'" alt="Photo"></div>'});html+='</div>';content.innerHTML=html}}function renderMarkets(){const content=document.getElementById('markets-content');let html='<div class="markets-content">';html+='<button class="refresh-btn" onclick="refreshStocks()"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>Refresh</button>';let totalValue=0,totalCost=0;CONFIG.PORTFOLIO.forEach(stock=>{const price=stockPrices[stock.ticker]||stock.avgCost;const value=price*stock.shares;const cost=stock.avgCost*stock.shares;const gain=value-cost;totalValue+=value;totalCost+=cost;stockPrices[stock.ticker]=price});const totalGain=totalValue-totalCost;html+='<div class="portfolio-summary"><div class="summary-card"><div class="summary-card-label">Total Value</div><div class="summary-card-value">$'+totalValue.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})+'</div></div><div class="summary-card"><div class="summary-card-label">Total Gain/Loss</div><div class="summary-card-value '+(totalGain>=0?'positive':'negative')+'">'+(totalGain>=0?'+':'')+'$'+totalGain.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})+'</div></div><div class="summary-card"><div class="summary-card-label">Return</div><div class="summary-card-value '+(totalGain>=0?'positive':'negative')+'">'+(totalGain>=0?'+':'')+((totalGain/totalCost)*100).toFixed(2)+'%</div></div></div>';html+='<table class="stock-table"><thead><tr><th>Symbol</th><th>Shares</th><th>Price</th><th>Value</th><th>Gain/Loss</th></tr></thead><tbody>';CONFIG.PORTFOLIO.forEach(stock=>{const price=stockPrices[stock.ticker]||stock.avgCost;const value=price*stock.shares;const gain=value-stock.avgCost*stock.shares;html+='<tr><td class="stock-ticker">'+stock.ticker+'</td><td>'+stock.shares+'</td><td class="stock-price">$'+price.toFixed(2)+'</td><td>$'+value.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})+'</td><td class="stock-change '+(gain>=0?'positive':'negative')+'">'+(gain>=0?'+':'')+'$'+gain.toFixed(2)+'</td></tr>'});html+='</tbody></table>';const analysisKeys=Object.keys(CONFIG.ANALYSIS);if(analysisKeys.length>0){html+='<div class="analysis-section"><h3>Analysis Notes</h3>';analysisKeys.forEach(ticker=>{html+='<div class="analysis-item"><div class="analysis-ticker">'+ticker+'</div><div class="analysis-note">'+CONFIG.ANALYSIS[ticker]+'</div></div>'});html+='</div>'}html+='</div>';content.innerHTML=html}async function refreshStocks(){
   const tickers=CONFIG.PORTFOLIO.map(s=>s.ticker);
   if(CONFIG.FINNHUB_API_KEY&&CONFIG.FINNHUB_API_KEY.length>10){
@@ -372,6 +408,19 @@ function updateClock(){const now=new Date();const days=['Sun','Mon','Tue','Wed',
 const bootScreen=document.getElementById('boot-screen');
 if(bootScreen){setTimeout(()=>{bootScreen.classList.add('hidden');setTimeout(()=>bootScreen.remove(),500)},1500)}
 updateTrackDisplay();renderTrackList()
+function renderBlog(){
+  const container=document.getElementById('blog-page');
+  const blog=CONFIG.BLOG;
+  let html='<div class="blog-page">';
+  html+='<div class="blog-header"><h1>'+blog.title+'</h1><p class="subtitle">'+blog.subtitle+'</p></div>';
+  html+='<div class="blog-nav"><div class="nav-links"><span>Writing</span><span>About</span></div><a>RSS</a></div>';
+  blog.posts.forEach(post=>{
+    html+='<div class="blog-post"><div class="post-meta">'+post.date+'</div><h2><a>'+post.title+'</a></h2><p>'+post.excerpt+'</p><a class="read-more">Read more →</a></div>';
+  });
+  html+='<div class="blog-footer">'+blog.title+' © 2026</div>';
+  html+='</div>';
+  container.innerHTML=html;
+}
 </script>
 </body>
 </html>
