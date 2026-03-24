@@ -1,35 +1,26 @@
-# Theilves Desktop
+# Theilves
 
-A macOS-style personal homepage. Built with vanilla HTML, CSS, and JavaScript.
+A minimal personal blog. Clean, readable, mobile-friendly.
 
-## Features
-- macOS Ventura desktop UI with menu bar, dock, and desktop icons
-- Music player with playlist support
-- Photo gallery with lightbox
-- Stock portfolio tracker (Markets app)
-- Finder file browser
-- Password-protected private apps
-- Live clock
+## Stack
+Pure HTML + CSS + JavaScript. No build step, no frameworks. Google Fonts (Instrument Serif, Instrument Sans).
 
-## Setup
+## Sections
+- **Writing** — notes on investing, technology, building things
+- **Stocks Dashboard** — linked in the nav (runs on `localhost:18790`)
 
-### Stock Prices (Finnhub API - Optional)
-1. Get a free API key at https://finnhub.io/register
-2. Open `index.html` and find `FINNHUB_API_KEY` in the CONFIG section
-3. Paste your API key
-
-### Music Files
-Add your audio file URLs to `MUSIC_TRACKS` in the CONFIG section.
-
-### Photos
-Add Discord CDN image URLs to `PHOTO_URLS` in the CONFIG section.
+## Development
+Open `index.html` directly in a browser, or serve locally:
+```bash
+npx serve .
+```
 
 ## Deployment
-- Push to GitHub
-- Connect repo to Vercel or Netlify
-- Auto-deploys on every push
+Push to GitHub → Vercel auto-deploys.
 
-## Tech
-- Pure HTML/CSS/JavaScript (no frameworks)
-- System fonts (-apple-system, SF Pro)
-- Frosted glass effects with backdrop-filter
+## Stocks Dashboard
+The dashboard runs as a separate Node.js service on `localhost:18790`. It needs to be running locally to access it.
+```bash
+cd stocks-dashboard
+./start.sh
+```
