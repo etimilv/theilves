@@ -17,8 +17,6 @@
       --text-secondary: #6b6b6b;
       --accent: #2563eb;
       --border: #e5e5e5;
-      --green: #16a34a;
-      --red: #dc2626;
       --font-serif: 'Instrument Serif', Georgia, serif;
       --font-sans: 'Instrument Sans', system-ui, sans-serif;
     }
@@ -30,14 +28,11 @@
       --text-secondary: #888;
       --accent: #60a0ff;
       --border: #2a2a2a;
-      --green: #4ade80;
-      --red: #f87171;
     }
 
     html { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 17px; line-height: 1.7; transition: background 0.3s, color 0.3s; }
     body { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 
-    /* ── Nav ── */
     nav {
       display: flex;
       align-items: center;
@@ -71,7 +66,6 @@
     }
     .dark-toggle:hover { color: var(--text); }
 
-    /* ── Hero ── */
     .hero { margin-bottom: 64px; }
     .hero h1 {
       font-family: var(--font-serif);
@@ -81,48 +75,14 @@
       letter-spacing: -0.02em;
       margin-bottom: 16px;
     }
-    .hero p {
-      font-size: 18px;
-      color: var(--text-secondary);
-      max-width: 480px;
-      line-height: 1.6;
-    }
+    .hero p { font-size: 18px; color: var(--text-secondary); max-width: 480px; line-height: 1.6; }
 
-    /* ── Section header ── */
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-    .section-title {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-    .section-last-updated {
-      font-size: 11px;
-      color: var(--text-secondary);
-    }
+    .section-header { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
 
-    /* ── Posts ── */
     .post { border-bottom: 1px solid var(--border); }
-    .post-link {
-      display: block;
-      padding: 28px 0;
-      text-decoration: none;
-      color: var(--text);
-      cursor: pointer;
-    }
+    .post-link { display: block; padding: 28px 0; text-decoration: none; color: var(--text); cursor: pointer; }
     .post-link:hover .post-title { color: var(--accent); }
-    .post-meta {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-      letter-spacing: 0.01em;
-    }
+    .post-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; letter-spacing: 0.01em; }
     .post-title {
       font-family: var(--font-serif);
       font-size: 24px;
@@ -131,244 +91,14 @@
       margin-bottom: 8px;
       transition: color 0.15s;
     }
-    .post-excerpt {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    .post-body {
-      display: none;
-      padding: 0 0 32px 0;
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text);
-    }
+    .post-excerpt { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+    .post-body { display: none; padding: 0 0 32px 0; font-size: 16px; line-height: 1.8; }
     .post-body.open { display: block; }
     .post-body p { margin-bottom: 20px; }
     .post-body p:last-child { margin-bottom: 0; }
     .post-body strong { font-weight: 600; }
-    .post-body code {
-      background: var(--bg-code);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 14px;
-    }
+    .post-body code { background: var(--bg-code); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
 
-    /* ── Stocks ── */
-    #stocks { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); }
-    .stocks-summary {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .s-card {
-      background: var(--bg-code);
-      border-radius: 8px;
-      padding: 14px 16px;
-    }
-    .s-card .lbl {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-secondary);
-      margin-bottom: 4px;
-    }
-    .s-card .val {
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .s-card .val.pos { color: var(--green); }
-    .s-card .val.neg { color: var(--red); }
-
-    /* ── Stock table ── */
-    .stock-filters {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .stock-filters input, .stock-filters select {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text);
-      padding: 6px 10px;
-      font-size: 13px;
-      font-family: var(--font-sans);
-      outline: none;
-    }
-    .stock-filters input { flex: 1; min-width: 140px; }
-    .stock-filters input:focus, .stock-filters select:focus { border-color: var(--accent); }
-    .stock-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
-    .stock-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    .stock-table th {
-      padding: 9px 12px;
-      text-align: left;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-secondary);
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-      cursor: pointer;
-      background: var(--bg);
-    }
-    .stock-table th:hover { color: var(--text); }
-    .stock-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: middle;
-    }
-    .stock-table tr:last-child td { border-bottom: none; }
-    .stock-table tbody tr:hover { background: var(--bg-code); cursor: pointer; }
-    .s-ticker {
-      font-weight: 700;
-      font-size: 13px;
-      color: var(--text);
-      white-space: nowrap;
-    }
-    .s-name {
-      font-size: 12px;
-      color: var(--text-secondary);
-      max-width: 160px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .s-sector {
-      font-size: 10px;
-      background: var(--bg-code);
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: var(--text-secondary);
-      white-space: nowrap;
-    }
-    .s-price { font-variant-numeric: tabular-nums; font-weight: 500; }
-    .s-gain.pos { color: var(--green); font-weight: 600; }
-    .s-gain.neg { color: var(--red); font-weight: 600; }
-    .s-rating {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 11px;
-      color: #fff;
-    }
-    .s-catalyst {
-      font-size: 11px;
-      color: var(--text-secondary);
-    }
-    .s-catalyst-date { font-weight: 600; color: var(--accent); }
-
-    /* ── Stock detail modal ── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-    html.dark .modal-overlay { background: rgba(0,0,0,0.75); }
-    .modal-overlay.open { display: flex; }
-    .modal {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      max-width: 560px;
-      width: 100%;
-      max-height: 85vh;
-      overflow-y: auto;
-    }
-    .modal-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 20px 22px;
-      border-bottom: 1px solid var(--border);
-    }
-    .modal-ticker { font-family: var(--font-serif); font-size: 24px; font-weight: 400; }
-    .modal-meta { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
-    .modal-close {
-      margin-left: auto;
-      background: var(--bg-code);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-close:hover { color: var(--text); }
-    .modal-body { padding: 20px 22px; }
-    .modal-section { margin-bottom: 16px; }
-    .modal-section h4 {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-    .modal-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .modal-field {
-      background: var(--bg-code);
-      border-radius: 7px;
-      padding: 8px 12px;
-    }
-    .modal-field .lbl {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-secondary);
-      margin-bottom: 2px;
-    }
-    .modal-field .val { font-size: 13px; font-weight: 600; }
-    .modal-field .val.pos { color: var(--green); }
-    .modal-field .val.neg { color: var(--red); }
-    .modal-text {
-      background: var(--bg-code);
-      border-radius: 7px;
-      padding: 12px;
-      font-size: 13px;
-      line-height: 1.7;
-      white-space: pre-wrap;
-    }
-    .modal-catalyst {
-      background: rgba(37, 99, 235, 0.08);
-      border: 1px solid rgba(37, 99, 235, 0.2);
-      border-radius: 7px;
-      padding: 10px 12px;
-      font-size: 13px;
-    }
-    .modal-catalyst strong { color: var(--accent); }
-
-    /* ── Empty / loading states ── */
-    .stocks-empty, .stocks-error {
-      text-align: center;
-      padding: 40px 0;
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-    .stocks-error a { color: var(--accent); }
-
-    /* ── Footer ── */
     footer {
       margin-top: 80px;
       padding: 28px 0;
@@ -380,13 +110,12 @@
       align-items: center;
     }
 
-    /* ── Animations ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .hero { animation: fadeUp 0.5s ease both; }
-    .posts, #stocks { animation: fadeUp 0.5s 0.1s ease both; }
+    .posts { animation: fadeUp 0.5s 0.1s ease both; }
   </style>
 </head>
 <body>
@@ -394,7 +123,6 @@
 <nav>
   <a href="/" class="nav-logo">Theilves</a>
   <div class="nav-right">
-    <a href="#stocks" class="nav-link">📈 Stocks</a>
     <button class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
   </div>
 </nav>
@@ -405,9 +133,7 @@
 </div>
 
 <div class="posts">
-  <div class="section-header">
-    <span class="section-title">Writing</span>
-  </div>
+  <div class="section-header">Writing</div>
 
   <article class="post" id="post-3">
     <div class="post-link" onclick="togglePost('post-3')">
@@ -449,80 +175,11 @@
   </article>
 </div>
 
-<!-- ── Stocks Section ── -->
-<section id="stocks">
-  <div class="section-header">
-    <span class="section-title">📈 Stock Ideas</span>
-    <span class="section-last-updated" id="stocks-updated">Loading…</span>
-  </div>
-
-  <div class="stocks-summary" id="stocks-summary">
-    <div class="s-card">
-      <div class="lbl">Total Ideas</div>
-      <div class="val" id="s-total">—</div>
-    </div>
-    <div class="s-card">
-      <div class="lbl">Avg Rating</div>
-      <div class="val" id="s-avg">—</div>
-    </div>
-    <div class="s-card">
-      <div class="lbl">Positions</div>
-      <div class="val" id="s-positions">—</div>
-    </div>
-  </div>
-
-  <div class="stock-filters">
-    <input type="text" id="s-search" placeholder="Search ticker or name…" oninput="renderStocks()">
-    <select id="s-filter-rating" onchange="renderStocks()">
-      <option value="all">All Ratings</option>
-      <option value="7">7+ ★</option>
-      <option value="8">8+ ★★</option>
-      <option value="9">9+ ★★★</option>
-    </select>
-    <select id="s-filter-sector" onchange="renderStocks()">
-      <option value="all">All Sectors</option>
-    </select>
-  </div>
-
-  <div class="stock-table-wrap">
-    <table class="stock-table">
-      <thead>
-        <tr>
-          <th onclick="sortStocks('rating')">★</th>
-          <th onclick="sortStocks('ticker')">Ticker</th>
-          <th onclick="sortStocks('name')">Name</th>
-          <th onclick="sortStocks('sector')">Sector</th>
-          <th onclick="sortStocks('next_catalyst_date')">Catalyst</th>
-        </tr>
-      </thead>
-      <tbody id="stocks-tbody">
-        <tr><td colspan="7" class="stocks-empty">Loading stock data…</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ── Stock Detail Modal ── -->
-<div class="modal-overlay" id="stock-modal" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <div class="modal-header">
-      <div>
-        <div class="modal-ticker" id="m-ticker"></div>
-        <div class="modal-meta" id="m-meta"></div>
-      </div>
-      <button class="modal-close" onclick="closeModal()">×</button>
-    </div>
-    <div class="modal-body" id="m-body"></div>
-  </div>
-</div>
-
 <footer>
   <span>© 2026 Theilves</span>
-  <span>Stock data updated daily</span>
 </footer>
 
 <script>
-  // ── Dark mode ──
   function toggleDark() {
     const html = document.documentElement;
     const btn = document.querySelector('.dark-toggle');
@@ -535,159 +192,9 @@
     document.documentElement.classList.add('dark');
     document.querySelector('.dark-toggle').textContent = '☀️';
   }
-
-  // ── Posts ──
   function togglePost(id) {
     document.getElementById(id + '-body').classList.toggle('open');
   }
-
-  // ── Stocks ──
-  let stocksData = null;
-  let sortKey = 'rating';
-  let sortDir = -1;
-
-  const DATA_URL = 'https://raw.githubusercontent.com/etimilv/theilves/main/data.json';
-
-  async function loadStocks() {
-    try {
-      const res = await fetch(DATA_URL + '?t=' + Date.now());
-      if (!res.ok) throw new Error('Failed to fetch');
-      stocksData = await res.json();
-      updateStocksSummary();
-      populateSectorFilter();
-      renderStocks();
-    } catch (e) {
-      document.getElementById('stocks-tbody').innerHTML =
-        '<tr><td colspan="7" class="stocks-error">Could not load stock data. <a href="https://github.com/etimilv/theilves/blob/main/data.json" target="_blank">View data on GitHub</a></td></tr>';
-      document.getElementById('stocks-updated').textContent = 'Error loading data';
-    }
-  }
-
-  function updateStocksSummary() {
-    if (!stocksData) return;
-    const ideas = stocksData.stockIdeas || [];
-    const positions = stocksData.portfolio || [];
-    const avg = ideas.length ? (ideas.reduce((a, b) => a + (b.rating || 0), 0) / ideas.length).toFixed(1) : '—';
-    const updated = stocksData.updated ? new Date(stocksData.updated).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—';
-    document.getElementById('s-total').textContent = ideas.length;
-    document.getElementById('s-avg').textContent = avg;
-    document.getElementById('s-positions').textContent = positions.length;
-    document.getElementById('stocks-updated').textContent = 'Updated ' + updated;
-  }
-
-  function populateSectorFilter() {
-    if (!stocksData) return;
-    const sectors = [...new Set((stocksData.stockIdeas || []).map(s => s.sector).filter(Boolean))].sort();
-    const sel = document.getElementById('s-filter-sector');
-    sel.innerHTML = '<option value="all">All Sectors</option>';
-    sectors.forEach(s => { sel.innerHTML += '<option value="' + s + '">' + s + '</option>'; });
-  }
-
-  function ratingColor(r) {
-    if (r >= 9) return '#af38eb';
-    if (r >= 8) return '#2563eb';
-    if (r >= 7) return '#16a34a';
-    return '#d97706';
-  }
-
-  function renderStocks() {
-    if (!stocksData) return;
-    const ideas = stocksData.stockIdeas || [];
-    const search = document.getElementById('s-search').value.toLowerCase();
-    const minRating = parseInt(document.getElementById('s-filter-rating').value) || 0;
-    const sector = document.getElementById('s-filter-sector').value;
-
-    let filtered = ideas.filter(s => {
-      if (s.rating < minRating) return false;
-      if (sector !== 'all' && s.sector !== sector) return false;
-      if (search && !(s.ticker + ' ' + (s.name || '') + (s.investment_rationale || '')).toLowerCase().includes(search)) return false;
-      return true;
-    });
-
-    filtered.sort((a, b) => {
-      const va = a[sortKey] || '';
-      const vb = b[sortKey] || '';
-      return typeof va === 'number' ? (va - vb) * sortDir : String(va).localeCompare(String(vb)) * sortDir;
-    });
-
-    const tbody = document.getElementById('stocks-tbody');
-    if (!filtered.length) {
-      tbody.innerHTML = '<tr><td colspan="7" class="stocks-empty">No stocks match your filters</td></tr>';
-      return;
-    }
-
-    tbody.innerHTML = filtered.map(s => {
-      const r = s.rating != null ? s.rating : '—';
-      const catStr = s.next_catalyst_date
-        ? '<span class="s-catalyst-date">' + s.next_catalyst_date + '</span>' + (s.next_catalyst_description ? ' — ' + s.next_catalyst_description : '')
-        : '<span style="color:var(--green)">✓ Done</span>';
-      return '<tr onclick="openStockModal(' + s.id + ')">' +
-        '<td style="text-align:center"><span class="s-rating" style="background:' + ratingColor(s.rating) + '">' + r + '</span></td>' +
-        '<td><span class="s-ticker">' + s.ticker + '</span></td>' +
-        '<td><span class="s-name" title="' + (s.name || '') + '">' + (s.name || '—') + '</span></td>' +
-        '<td>' + (s.sector ? '<span class="s-sector">' + s.sector + '</span>' : '—') + '</td>' +
-        '<td><span class="s-catalyst">' + catStr + '</span></td>' +
-        '</tr>';
-    }).join('');
-  }
-
-  function sortStocks(key) {
-    if (sortKey === key) sortDir *= -1;
-    else { sortKey = key; sortDir = -1; }
-    renderStocks();
-  }
-
-  function openStockModal(id) {
-    const s = (stocksData.stockIdeas || []).find(x => x.id === id);
-    if (!s) return;
-    document.getElementById('m-ticker').textContent = s.ticker;
-    document.getElementById('m-meta').textContent = [s.name, s.sector, s.country, s.exchange].filter(Boolean).join(' · ');
-
-    const pairs = [
-      ['Rating', s.rating],
-      ['Status', s.status],
-      ['Sector', s.sector],
-      ['Country', s.country],
-      ['Exchange', s.exchange],
-      ['Div Yield', s.dividend_yield_pct != null ? s.dividend_yield_pct + '%' : null],
-      ['Earnings', s.next_earnings_date],
-      ['Dividend', s.next_dividend_ex_date],
-      ['Catalyst', s.next_catalyst_date],
-      ['Report', s.report_file],
-    ].filter(a => a[1] != null);
-
-    let body = '<div class="modal-section"><div class="modal-grid">';
-    body += '<div class="modal-field"><div class="lbl">Rating</div><div class="val" style="color:' + ratingColor(s.rating) + '">' + (s.rating || '—') + '</div></div>';
-    body += pairs.slice(1).map(a => '<div class="modal-field"><div class="lbl">' + a[0] + '</div><div class="val">' + a[1] + '</div></div>').join('');
-    body += '</div></div>';
-
-    if (s.short_overview) {
-      body += '<div class="modal-section"><h4>Short Overview</h4><div class="modal-text">' + s.short_overview + '</div></div>';
-    }
-    if (s.investment_rationale) {
-      body += '<div class="modal-section"><h4>Investment Rationale</h4><div class="modal-text">' + s.investment_rationale + '</div></div>';
-    }
-    if (s.notes) {
-      body += '<div class="modal-section"><h4>Notes</h4><div class="modal-text">' + s.notes + '</div></div>';
-    }
-    if (s.next_catalyst_date) {
-      body += '<div class="modal-section"><h4>Next Catalyst</h4><div class="modal-catalyst"><strong>' + s.next_catalyst_date + '</strong> — ' + (s.next_catalyst_description || '') + '</div></div>';
-    }
-
-    document.getElementById('m-body').innerHTML = body;
-    document.getElementById('stock-modal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    document.getElementById('stock-modal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  // Load on page load
-  loadStocks();
 </script>
 
 </body>
