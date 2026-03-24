@@ -6,218 +6,289 @@
   <title>Stocks — Theilves</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg: #fafafa; --bg-code: #f0f0f0; --text: #1a1a1a;
-      --text-secondary: #6b6b6b; --accent: #2563eb; --border: #e5e5e5;
-      --green: #16a34a; --red: #dc2626; --yellow: #ca8a04; --purple: #9333ea;
-      --font-serif: 'Instrument Serif', Georgia, serif;
-      --font-sans: 'Instrument Sans', system-ui, sans-serif;
+      --bg: #0d1117; --bg2: #161b22; --bg3: #21262d;
+      --border: #30363d; --text: #e6edf3; --text2: #8b949e;
+      --accent: #2f81f7; --green: #3fb950; --red: #f85149; --yellow: #d29922;
+      --purple: #a371f7;
     }
-    html.dark {
-      --bg: #111111; --bg-code: #1e1e1e; --text: #e8e8e8;
-      --text-secondary: #888; --accent: #60a0ff; --border: #2a2a2a;
-      --green: #4ade80; --red: #f87171; --yellow: #facc15; --purple: #c084fc;
+
+    html { background: var(--bg); color: var(--text); font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; }
+
+    body { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Header ── */
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+      position: sticky; top: 0; z-index: 100;
+      margin: 0 -20px;
+      padding-left: 20px; padding-right: 20px;
     }
-    html { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 17px; line-height: 1.7; transition: background 0.3s, color 0.3s; }
-    body { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    header h1 { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 16px; }
+    header h1 a { color: var(--text); }
+    header h1 a:hover { text-decoration: none; }
+    .header-right { display: flex; align-items: center; gap: 10px; }
+    .dark-toggle {
+      background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text); padding: 6px 12px; border-radius: 6px;
+      cursor: pointer; font-size: 13px; font-family: inherit;
+    }
+    .dark-toggle:hover { background: var(--border); }
+    .header-link { font-size: 13px; color: var(--text2); font-weight: 500; }
+    .header-link:hover { color: var(--text); text-decoration: none; }
+    .header-link.active { color: var(--accent); }
 
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 28px 0 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 48px; }
-    .nav-logo { font-family: var(--font-serif); font-size: 20px; font-weight: 400; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
-    .nav-right { display: flex; align-items: center; gap: 20px; }
-    .nav-link { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
-    .nav-link:hover { color: var(--accent); }
-    .nav-link.active { color: var(--accent); font-weight: 600; }
-    .dark-toggle { background: none; border: none; cursor: pointer; color: var(--text-secondary); font-size: 16px; padding: 4px; transition: color 0.15s; display: flex; align-items: center; }
-    .dark-toggle:hover { color: var(--text); }
-
-    h1 { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 40px); font-weight: 400; line-height: 1.15; margin-bottom: 6px; }
-    .subtitle { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; }
-
-    .section-header { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
-    .section-header .updated { font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 11px; }
-    .tab-bar { display: flex; gap: 4px; margin-bottom: 20px; }
-    .tab { padding: 7px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary); transition: all 0.15s; }
-    .tab:hover { border-color: var(--accent); color: var(--accent); }
-    .tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+    /* ── Main content ── */
+    main { padding: 28px 0 60px; }
 
     /* ── Summary cards ── */
-    .summary-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
-    .s-card { background: var(--bg-code); border-radius: 10px; padding: 14px 16px; }
-    .s-card .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 4px; }
-    .s-card .val { font-size: 22px; font-weight: 700; color: var(--text); }
-    .s-card .val.pos { color: var(--green); }
-    .s-card .val.neg { color: var(--red); }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px;
+      position: relative; overflow: hidden;
+    }
+    .card .label { font-size: 10px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+    .card .value { font-size: 24px; font-weight: 700; }
+    .card.green .value { color: var(--green); }
+    .card.red .value { color: var(--red); }
+    .card.yellow .value { color: var(--yellow); }
+
+    /* ── Tabs ── */
+    .tabs { display: flex; gap: 4px; margin-bottom: 20px; background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 4px; width: fit-content; }
+    .tab { padding: 8px 20px; border-radius: 7px; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--text2); transition: all 0.15s; }
+    .tab:hover { color: var(--text); }
+    .tab.active { background: var(--bg3); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
 
     /* ── Filters ── */
-    .filters { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
-    .filters input, .filters select { background: var(--bg); border: 1px solid var(--border); border-radius: 7px; color: var(--text); padding: 7px 12px; font-size: 13px; font-family: var(--font-sans); outline: none; }
-    .filters input { flex: 1; min-width: 160px; }
-    .filters input:focus, .filters select:focus { border-color: var(--accent); }
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;
+    }
+    .filters .search {
+      flex: 1; min-width: 180px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text); padding: 7px 12px; font-size: 13px;
+      outline: none; font-family: inherit;
+    }
+    .filters .search:focus { border-color: var(--accent); }
+    .filters select {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+      color: var(--text); padding: 6px 9px; font-size: 12px; outline: none;
+      cursor: pointer; font-family: inherit;
+    }
+    .filter-count { margin-left: auto; font-size: 12px; color: var(--text2); }
 
     /* ── Table ── */
-    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 48px; }
-    .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    .data-table th { padding: 9px 12px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); border-bottom: 1px solid var(--border); white-space: nowrap; cursor: pointer; background: var(--bg); user-select: none; }
-    .data-table th:hover { color: var(--text); }
-    .data-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table tbody tr:hover { background: var(--bg-code); cursor: pointer; }
-    .ticker { font-weight: 700; font-size: 13px; white-space: nowrap; }
-    .name { font-size: 12px; color: var(--text-secondary); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .sector { font-size: 10px; background: var(--bg-code); padding: 2px 7px; border-radius: 4px; color: var(--text-secondary); white-space: nowrap; display: inline-block; }
-    .rating { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-weight: 700; font-size: 11px; color: #fff; flex-shrink: 0; }
-    .catalyst { font-size: 11px; color: var(--text-secondary); }
-    .catalyst-date { font-weight: 600; color: var(--accent); font-size: 11px; }
-    .empty-state { text-align: center; padding: 48px 0; color: var(--text-secondary); font-size: 14px; }
-    .error-state { text-align: center; padding: 48px 0; color: var(--text-secondary); font-size: 14px; }
-    .error-state a { color: var(--accent); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead tr { background: var(--bg2); }
+    th {
+      padding: 9px 12px; text-align: left; font-weight: 600; font-size: 10px;
+      text-transform: uppercase; letter-spacing: 0.4px; color: var(--text2);
+      border-bottom: 1px solid var(--border); white-space: nowrap;
+      cursor: pointer; user-select: none;
+    }
+    th:hover { color: var(--text); }
+    th.sorted { color: var(--accent); }
+    td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: var(--bg2); cursor: pointer; }
+    .empty-row td { text-align: center; padding: 40px; color: var(--text2); }
 
-    /* ── Portfolio ── */
-    .port-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
-    .port-card { background: var(--bg-code); border-radius: 10px; padding: 14px 16px; }
-    .port-card .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 4px; }
-    .port-card .val { font-size: 22px; font-weight: 700; color: var(--text); }
-    .port-card .val.pos { color: var(--green); }
-    .port-card .val.neg { color: var(--red); }
-    .port-positions { display: grid; gap: 8px; }
-    .port-pos { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; }
-    .port-pos-left { display: flex; flex-direction: column; gap: 2px; }
-    .port-pos-ticker { font-weight: 700; font-size: 15px; }
-    .port-pos-name { font-size: 11px; color: var(--text-secondary); }
-    .port-pos-right { text-align: right; }
-    .port-pos-pnl { font-size: 15px; font-weight: 700; }
-    .port-pos-pnl.pos { color: var(--green); }
-    .port-pos-pnl.neg { color: var(--red); }
-    .port-pos-detail { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
-    .no-positions { text-align: center; padding: 32px 0; color: var(--text-secondary); font-size: 14px; }
+    /* ── Ticker cell ── */
+    .ticker-cell { display: flex; flex-direction: column; gap: 2px; }
+    .ticker-name { font-size: 11px; color: var(--text2); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* ── Rating circles (9 color bands like dashboard) ── */
+    .rating {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 50%; font-weight: 700; font-size: 12px;
+    }
+    .r1  { background: #3d1a1a; color: #ff6b6b; }
+    .r2  { background: #3d2a1a; color: #ffa07a; }
+    .r3  { background: #3d351a; color: #ffd700; }
+    .r4  { background: #2a3d1a; color: #9acd32; }
+    .r5  { background: #1a3d2a; color: #7fff00; }
+    .r6  { background: #1a2e3d; color: #87ceeb; }
+    .r7  { background: #1a1a3d; color: #6495ed; }
+    .r8  { background: #2d1a3d; color: #da70d6; }
+    .r9, .r10 { background: #3d1a3d; color: #ff69b4; }
+
+    /* ── Status badges ── */
+    .status { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
+    .status.completed { background: rgba(63,185,80,0.15); color: var(--green); }
+    .status.pending   { background: rgba(210,153,34,0.15); color: var(--yellow); }
+    .status.buy, .status.approved, .status.increase { background: rgba(63,185,80,0.15); color: var(--green); }
+    .status.hold { background: rgba(139,148,158,0.15); color: var(--text2); }
+    .status.reduce, .status.close, .status.rejected { background: rgba(248,81,73,0.15); color: var(--red); }
+    .status.dismissed { background: rgba(139,148,158,0.15); color: var(--text2); }
+
+    /* ── Catalyst ── */
+    .catalyst { font-size: 11px; color: var(--yellow); }
+
+    /* ── Portfolio positions ── */
+    .pos-grid { display: grid; gap: 12px; }
+    .position-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+    .position-card .ticker { font-size: 16px; font-weight: 700; }
+    .position-card .name { font-size: 11px; color: var(--text2); margin: 2px 0 8px; }
+    .position-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--border); }
+    .position-row:last-of-type { border-bottom: none; }
+    .position-row .label { color: var(--text2); }
+    .pos-val { color: var(--green); font-weight: 600; }
+    .neg-val { color: var(--red); font-weight: 600; }
+    .position-card .rationale { font-size: 11px; color: var(--text2); line-height: 1.5; margin-top: 8px; }
 
     /* ── Modal ── */
-    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 24px; }
-    html.dark .modal-overlay { background: rgba(0,0,0,0.75); }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(1,4,9,0.85); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
     .modal-overlay.open { display: flex; }
-    .modal { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; max-width: 540px; width: 100%; max-height: 85vh; overflow-y: auto; }
-    .modal-header { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px; border-bottom: 1px solid var(--border); }
-    .modal-ticker { font-family: var(--font-serif); font-size: 22px; font-weight: 400; }
-    .modal-meta { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
-    .modal-close { margin-left: auto; background: var(--bg-code); border: 1px solid var(--border); color: var(--text-secondary); width: 26px; height: 26px; border-radius: 6px; cursor: pointer; font-size: 16px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-    .modal-close:hover { color: var(--text); }
-    .modal-body { padding: 18px 20px; }
-    .modal-section { margin-bottom: 14px; }
-    .modal-section h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); margin-bottom: 7px; }
-    .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
-    .modal-field { background: var(--bg-code); border-radius: 7px; padding: 7px 10px; }
-    .modal-field .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); margin-bottom: 1px; }
-    .modal-field .val { font-size: 13px; font-weight: 600; }
-    .modal-text { background: var(--bg-code); border-radius: 7px; padding: 10px 12px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; }
-    .modal-catalyst { background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2); border-radius: 7px; padding: 9px 12px; font-size: 13px; }
-    .modal-catalyst strong { color: var(--accent); }
+    .modal { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; max-width: 680px; width: 100%; max-height: 85vh; overflow-y: auto; }
+    .modal-header { display: flex; align-items: center; gap: 14px; padding: 18px 22px; border-bottom: 1px solid var(--border); }
+    .modal-header h2 { font-size: 18px; font-weight: 700; }
+    .modal-header .meta { font-size: 11px; color: var(--text2); }
+    .modal-close {
+      margin-left: auto; background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text); width: 30px; height: 30px; border-radius: 6px;
+      cursor: pointer; font-size: 16px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    }
+    .modal-close:hover { background: var(--border); }
+    .modal-body { padding: 20px 22px; }
+    .modal-section { margin-bottom: 18px; }
+    .modal-section h3 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text2); margin-bottom: 8px; }
+    .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .modal-field { background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 8px 12px; }
+    .modal-field .lbl { font-size: 10px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 3px; }
+    .modal-field .val { font-size: 13px; font-weight: 600; word-break: break-all; }
+    .modal-field .val.pos { color: var(--green); }
+    .modal-field .val.neg { color: var(--red); }
+    .text-block { background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 12px; font-size: 12px; line-height: 1.6; white-space: pre-wrap; }
+    .catalyst-block { background: rgba(210,153,34,0.08); border: 1px solid rgba(210,153,34,0.3); border-radius: 7px; padding: 10px 14px; font-size: 12px; }
+    .catalyst-block strong { color: var(--yellow); }
 
-    footer { margin-top: 60px; padding: 24px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); display: flex; justify-content: space-between; }
-    footer a { color: var(--text-secondary); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .page-content { animation: fadeUp 0.4s ease both; }
+    .loading { text-align: center; padding: 40px; color: var(--text2); }
+    .spinner { width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: sp 0.7s linear infinite; margin: 0 auto 10px; }
+    @keyframes sp { to { transform: rotate(360deg); } }
+
+    /* ── Portfolio tab content ── */
+    .port-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 20px; }
+    .no-data { text-align: center; padding: 40px; color: var(--text2); }
 
     [hidden] { display: none !important; }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">Theilves</a>
-  <div class="nav-right">
-    <a href="stocks.html" class="nav-link active">📈 Stocks</a>
-    <button class="dark-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+<header>
+  <h1><a href="/">Theilves</a> › Stocks</h1>
+  <div class="header-right">
+    <a href="stocks.html" class="header-link active">📈 Stocks</a>
+    <button class="dark-toggle" onclick="toggleDark()" id="themeBtn">☀️</button>
   </div>
-</nav>
+</header>
 
-<div class="page-content">
-
-  <h1>📈 Stock Ideas</h1>
-  <p class="subtitle">Filtered view of my investment research — updated daily from my local database.</p>
-
-  <!-- ── Summary ── -->
-  <div class="summary-row" id="summary-row">
-    <div class="s-card"><div class="lbl">Total Ideas</div><div class="val" id="s-total">—</div></div>
-    <div class="s-card"><div class="lbl">Avg Rating</div><div class="val" id="s-avg">—</div></div>
-    <div class="s-card"><div class="lbl">Positions</div><div class="val" id="s-positions">—</div></div>
-    <div class="s-card"><div class="lbl">★ 7+ Ideas</div><div class="val" id="s-high-rated">—</div></div>
+<main>
+  <!-- Summary cards -->
+  <div class="summary-grid">
+    <div class="card green"><div class="label">Total Ideas</div><div class="value" id="sc-total">—</div></div>
+    <div class="card"><div class="label">Avg Rating</div><div class="value" id="sc-avg">—</div></div>
+    <div class="card"><div class="label">Positions</div><div class="value" id="sc-positions">—</div></div>
+    <div class="card yellow"><div class="label">★ 7+ Ideas</div><div class="value" id="sc-high">—</div></div>
+    <div class="card"><div class="label">Portfolio Value</div><div class="value" id="sc-port-val">—</div></div>
+    <div class="card"><div class="label">Total P&L</div><div class="value" id="sc-pnl">—</div></div>
   </div>
 
-  <!-- ── Filters ── -->
-  <div class="filters">
-    <input type="text" id="s-search" placeholder="Search ticker, name, sector…" oninput="renderIdeas()">
-    <select id="s-filter-rating" onchange="renderIdeas()">
-      <option value="all">All Ratings</option>
-      <option value="7">7+ ★</option>
-      <option value="8">8+ ★★</option>
-      <option value="9">9+ ★★★</option>
-    </select>
-    <select id="s-filter-sector" onchange="renderIdeas()">
-      <option value="all">All Sectors</option>
-    </select>
-    <select id="s-filter-status" onchange="renderIdeas()">
-      <option value="all">All Status</option>
-      <option value="active">Active</option>
-      <option value="completed">Completed</option>
-      <option value="pending">Pending</option>
-    </select>
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('ideas')" id="tab-ideas">Ideas</div>
+    <div class="tab" onclick="switchTab('portfolio')" id="tab-portfolio">Portfolio</div>
   </div>
 
-  <!-- ── Ideas Table ── -->
-  <div class="section-header">
-    <span>Ideas</span>
-    <span class="updated" id="ideas-updated">Loading…</span>
-  </div>
-  <div class="table-wrap">
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th onclick="sortIdeas('rating')">★</th>
-          <th onclick="sortIdeas('ticker')">Ticker</th>
-          <th onclick="sortIdeas('name')">Name</th>
-          <th onclick="sortIdeas('sector')">Sector</th>
-          <th onclick="sortIdeas('status')">Status</th>
-          <th onclick="sortIdeas('next_catalyst_date')">Catalyst</th>
-        </tr>
-      </thead>
-      <tbody id="ideas-tbody">
-        <tr><td colspan="6" class="empty-state">Loading…</td></tr>
-      </tbody>
-    </table>
+  <!-- ── Ideas tab ── -->
+  <div id="ideas-panel">
+    <div class="filters">
+      <input type="text" class="search" id="s-search" placeholder="Search ticker, name, sector, rationale…" oninput="renderIdeas()">
+      <select id="s-rating" onchange="renderIdeas()">
+        <option value="all">All Ratings</option>
+        <option value="7">7+ ★</option>
+        <option value="8">8+ ★★</option>
+        <option value="9">9+ ★★★</option>
+      </select>
+      <select id="s-sector" onchange="renderIdeas()">
+        <option value="all">All Sectors</option>
+      </select>
+      <select id="s-status" onchange="renderIdeas()">
+        <option value="all">All Status</option>
+        <option value="active">Active</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+      <span class="filter-count" id="filter-count"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortIdeas('rating')">★</th>
+            <th onclick="sortIdeas('ticker')">Ticker</th>
+            <th onclick="sortIdeas('name')">Name</th>
+            <th onclick="sortIdeas('sector')">Sector</th>
+            <th onclick="sortIdeas('status')">Status</th>
+            <th onclick="sortIdeas('next_catalyst_date')">Catalyst</th>
+            <th onclick="sortIdeas('dividend_yield_pct')">Yield</th>
+          </tr>
+        </thead>
+        <tbody id="ideas-tbody">
+          <tr><td colspan="7" class="empty-row"><div class="loading"><div class="spinner"></div>Loading…</div></td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <!-- ── Portfolio ── -->
-  <h1 style="margin-top: 16px;">💼 Portfolio</h1>
-  <p class="subtitle">Current positions and performance.</p>
-
-  <div class="port-row" id="port-summary">
-    <div class="port-card"><div class="lbl">Positions</div><div class="val" id="port-count">—</div></div>
-    <div class="port-card"><div class="lbl">Avg Entry</div><div class="val" id="port-avg-entry">—</div></div>
-    <div class="port-card"><div class="lbl">Avg Current</div><div class="val" id="port-avg-current">—</div></div>
-    <div class="port-card"><div class="lbl">Total P&L</div><div class="val" id="port-total-pnl">—</div></div>
+  <!-- ── Portfolio tab ── -->
+  <div id="portfolio-panel" hidden>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Entry</th>
+            <th>Current</th>
+            <th>P&L %</th>
+            <th>Value</th>
+            <th>Thesis</th>
+          </tr>
+        </thead>
+        <tbody id="port-tbody">
+          <tr><td colspan="8" class="empty-row"><div class="loading"><div class="spinner"></div>Loading…</div></td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <div class="section-header">
-    <span>Current Positions</span>
-  </div>
-  <div class="port-positions" id="port-positions">
-    <div class="no-positions">Loading…</div>
-  </div>
-
-</div>
+</main>
 
 <!-- ── Modal ── -->
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="modal-header">
       <div>
-        <div class="modal-ticker" id="m-ticker"></div>
-        <div class="modal-meta" id="m-meta"></div>
+        <h2 id="m-ticker">—</h2>
+        <div class="meta" id="m-meta"></div>
       </div>
       <button class="modal-close" onclick="closeModal()">×</button>
     </div>
@@ -225,23 +296,10 @@
   </div>
 </div>
 
-<footer>
-  <span>© 2026 Theilves</span>
-  <span>Data via <a href="https://finnhub.io" target="_blank">Finnhub</a> · Updated daily</span>
-</footer>
-
 <script>
-  // ── Dark mode ──
+  // ── Dark mode (light not used, but keep toggle for consistency) ──
   function toggleDark() {
-    const html = document.documentElement;
-    html.classList.toggle('dark');
-    const isDark = html.classList.contains('dark');
-    document.querySelector('.dark-toggle').textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }
-  if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.classList.add('dark');
-    document.querySelector('.dark-toggle').textContent = '☀️';
+    // stocks-dashboard is dark-only; this button stays
   }
 
   // ── Data ──
@@ -260,15 +318,14 @@
       renderAll();
     } catch (e) {
       document.getElementById('ideas-tbody').innerHTML =
-        '<tr><td colspan="6" class="error-state">Could not load data. <a href="https://github.com/etimilv/theilves/blob/main/data.json" target="_blank">View on GitHub</a></td></tr>';
+        '<tr><td colspan="7" class="empty-row">Could not load data. <a href="https://github.com/etimilv/theilves/blob/main/data.json" target="_blank">View on GitHub</a></td></tr>';
     }
   }
 
   function buildSectorFilter() {
     const sectors = [...new Set((data.stockIdeas||[]).map(s=>s.sector).filter(Boolean))].sort();
-    const sel = document.getElementById('s-filter-sector');
-    sel.innerHTML = '<option value="all">All Sectors</option>';
-    sectors.forEach(s => { sel.innerHTML += '<option value="'+s+'">'+s+'</option>'; });
+    const sel = document.getElementById('s-sector');
+    sectors.forEach(s => { sel.innerHTML += '<option value="'+E(s)+'">'+E(s)+'</option>'; });
   }
 
   function renderAll() {
@@ -279,32 +336,74 @@
 
   // ── Summary ──
   function renderSummary() {
-    const ideas = data.stockIdeas || [];
-    const positions = data.portfolio || [];
-    const avg = ideas.length ? (ideas.reduce((a,b)=>a+(b.rating||0),0)/ideas.length).toFixed(1) : '—';
-    const highRated = ideas.filter(s=>(s.rating||0)>=7).length;
-    const updated = data.updated ? new Date(data.updated).toLocaleString('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}) : '—';
-    document.getElementById('s-total').textContent = ideas.length;
-    document.getElementById('s-avg').textContent = avg;
-    document.getElementById('s-positions').textContent = positions.length;
-    document.getElementById('s-high-rated').textContent = highRated;
-    document.getElementById('ideas-updated').textContent = 'Updated ' + updated;
+    const ideas = data.stockIdeas||[];
+    const port  = data.portfolio||[];
+    const avg  = ideas.length ? (ideas.reduce((a,b)=>a+(b.rating||0),0)/ideas.length).toFixed(1) : '—';
+    const high  = ideas.filter(s=>(s.rating||0)>=7).length;
+    document.getElementById('sc-total').textContent = ideas.length;
+    document.getElementById('sc-avg').textContent = avg;
+    document.getElementById('sc-positions').textContent = port.length;
+    document.getElementById('sc-high').textContent = high;
+
+    // Portfolio summary
+    if (port.length) {
+      let totalVal = 0, totalPnl = 0;
+      port.forEach(p => {
+        const v = parseFloat(p.value)||0;
+        const e = parseFloat(p.entry_price)||0;
+        const c = parseFloat(p.current_price)||0;
+        totalVal += v;
+        if (e && c) totalPnl += (c-e)/e*100;
+      });
+      const avgPnl = port.length ? totalPnl/port.length : 0;
+      const pnlEl = document.getElementById('sc-pnl');
+      pnlEl.textContent = (avgPnl>=0?'+':'')+avgPnl.toFixed(1)+'%';
+      pnlEl.style.color = avgPnl>=0 ? 'var(--green)' : 'var(--red)';
+      document.getElementById('sc-port-val').textContent = '$'+(totalVal||0).toFixed(0);
+    } else {
+      document.getElementById('sc-pnl').textContent = '—';
+      document.getElementById('sc-port-val').textContent = '—';
+    }
+  }
+
+  // ── Tab switching ──
+  function switchTab(tab) {
+    const ideasP = document.getElementById('ideas-panel');
+    const portP  = document.getElementById('portfolio-panel');
+    const tabI   = document.getElementById('tab-ideas');
+    const tabP   = document.getElementById('tab-portfolio');
+    if (tab === 'ideas') {
+      ideasP.hidden = false; portP.hidden = true;
+      tabI.classList.add('active'); tabP.classList.remove('active');
+    } else {
+      ideasP.hidden = true; portP.hidden = false;
+      tabP.classList.add('active'); tabI.classList.remove('active');
+    }
   }
 
   // ── Ideas table ──
+  function ratingClass(r) {
+    if (!r) return 'r6';
+    if (r>=9) return 'r9';
+    return 'r'+r;
+  }
+
   function renderIdeas() {
     if (!data) return;
-    const ideas = data.stockIdeas || [];
-    const search = document.getElementById('s-search').value.toLowerCase();
-    const minRating = parseInt(document.getElementById('s-filter-rating').value)||0;
-    const sector = document.getElementById('s-filter-sector').value;
-    const status = document.getElementById('s-filter-status').value;
+    const ideas   = data.stockIdeas||[];
+    const search  = document.getElementById('s-search').value.toLowerCase();
+    const minR    = parseInt(document.getElementById('s-rating').value)||0;
+    const sector  = document.getElementById('s-sector').value;
+    const status  = document.getElementById('s-status').value;
 
     let filtered = ideas.filter(s => {
-      if (s.rating < minRating) return false;
+      if ((s.rating||0) < minR) return false;
       if (sector !== 'all' && s.sector !== sector) return false;
       if (status !== 'all' && s.status !== status) return false;
-      if (search && !(s.ticker+' '+(s.name||'')+' '+(s.investment_rationale||'')+' '+(s.sector||'')).toLowerCase().includes(search)) return false;
+      if (search) {
+        const hay = (s.ticker+' '+(s.name||'')+' '+(s.sector||'')+' '+(s.investment_rationale||'')+' '+(s.short_overview||'')).toLowerCase();
+        if (!hay.includes(search)) return false;
+      }
       return true;
     });
 
@@ -313,23 +412,30 @@
       return typeof va==='number' ? (va-vb)*sortDir : String(va).localeCompare(String(vb))*sortDir;
     });
 
+    document.getElementById('filter-count').textContent = filtered.length+' of '+ideas.length;
+
     const tbody = document.getElementById('ideas-tbody');
     if (!filtered.length) {
-      tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No stocks match your filters</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="7" class="empty-row">No stocks match your filters</td></tr>';
       return;
     }
+
     tbody.innerHTML = filtered.map(s => {
-      const r = s.rating!=null ? s.rating : '—';
-      const catStr = s.next_catalyst_date
-        ? '<span class="catalyst-date">'+esc(s.next_catalyst_date)+'</span>'+(s.next_catalyst_description?'<br><span class="catalyst">'+esc(s.next_catalyst_description).substring(0,35)+'</span>':'')
-        : '<span style="color:var(--green)">✓ Done</span>';
+      const r    = s.rating!=null ? s.rating : '—';
+      const cat  = s.next_catalyst_date
+        ? '<span class="catalyst">📅 '+E(s.next_catalyst_date)+'</span>'+(s.next_catalyst_description?'<br><span style="font-size:10px;color:var(--text2)">'+E(s.next_catalyst_description).substring(0,35)+'</span>':'')
+        : '<span style="color:var(--green);font-size:11px">✓ Done</span>';
+      const yld  = s.dividend_yield_pct != null ? '<span style="color:var(--green)">'+s.dividend_yield_pct+'%</span>' : '—';
+      const stat = s.status ? '<span class="status '+E(s.status)+'">'+E(s.status)+'</span>' : '—';
+
       return '<tr onclick="openModal('+s.id+')">'+
-        '<td style="text-align:center"><span class="rating" style="background:'+ratingColor(s.rating)+'">'+r+'</span></td>'+
-        '<td><span class="ticker">'+esc(s.ticker||'')+'</span></td>'+
-        '<td><span class="name" title="'+esc(s.name||'')+'">'+esc(s.name||'—')+'</span></td>'+
-        '<td>'+(s.sector?'<span class="sector">'+esc(s.sector)+'</span>':'—')+'</td>'+
-        '<td><span class="sector">'+esc(s.status||'—')+'</span></td>'+
-        '<td><span class="catalyst">'+catStr+'</span></td>'+
+        '<td style="text-align:center"><span class="rating '+ratingClass(s.rating)+'">'+r+'</span></td>'+
+        '<td><strong>'+E(s.ticker||'')+'</strong></td>'+
+        '<td><span class="ticker-name" title="'+E(s.name||'')+'">'+E(s.name||'—')+'</span></td>'+
+        '<td>'+(s.sector?'<span class="status">'+E(s.sector)+'</span>':'—')+'</td>'+
+        '<td>'+stat+'</td>'+
+        '<td>'+cat+'</td>'+
+        '<td>'+yld+'</td>'+
         '</tr>';
     }).join('');
   }
@@ -340,55 +446,34 @@
     renderIdeas();
   }
 
-  // ── Portfolio ──
+  // ── Portfolio table ──
   function renderPortfolio() {
     if (!data) return;
-    const positions = data.portfolio || [];
-    document.getElementById('port-count').textContent = positions.length || '—';
-
-    if (!positions.length) {
-      document.getElementById('port-summary').innerHTML += '';
-      document.getElementById('port-positions').innerHTML = '<div class="no-positions">No positions yet.</div>';
+    const port = data.portfolio||[];
+    const tbody = document.getElementById('port-tbody');
+    if (!port.length) {
+      tbody.innerHTML = '<tr><td colspan="8" class="empty-row">No positions yet.</td></tr>';
       return;
     }
-
-    // Total P&L
-    let totalPnl = 0, totalEntry = 0;
-    positions.forEach(p => {
-      const entry = parseFloat(p.entry_price)||0;
-      const current = parseFloat(p.current_price)||0;
-      const pnl = p.pnl_pct != null ? p.pnl_pct : (current && entry ? (current-entry)/entry*100 : null);
-      totalPnl += pnl||0;
-      totalEntry += entry||0;
-    });
-    const avgPnl = positions.length ? totalPnl/positions.length : 0;
-    const avgEntry = positions.length ? totalEntry/positions.length : 0;
-    const avgCurrent = positions.length ? positions.reduce((s,p)=>s+(parseFloat(p.current_price)||0),0)/positions.length : 0;
-
-    document.getElementById('port-count').textContent = positions.length;
-    document.getElementById('port-avg-entry').textContent = avgEntry ? '$'+avgEntry.toFixed(2) : '—';
-    document.getElementById('port-avg-current').textContent = avgCurrent ? '$'+avgCurrent.toFixed(2) : '—';
-    const pnlEl = document.getElementById('port-total-pnl');
-    pnlEl.textContent = (avgPnl>=0?'+':'')+avgPnl.toFixed(1)+'%';
-    pnlEl.className = 'val '+(avgPnl>=0?'pos':'neg');
-
-    document.getElementById('port-positions').innerHTML = positions.map(p => {
-      const entry = parseFloat(p.entry_price)||0;
-      const current = parseFloat(p.current_price)||0;
-      const pnl = p.pnl_pct != null ? p.pnl_pct : (current && entry ? (current-entry)/entry*100 : null);
-      const pnlStr = pnl != null ? (pnl>=0?'+':'')+pnl.toFixed(1)+'%' : '—';
-      const shares = p.shares != null ? p.shares+' shares · ' : '';
-      const value = p.value != null ? '$'+parseFloat(p.value).toFixed(0) : '';
-      return '<div class="port-pos" onclick="openPortModal(\''+esc(p.ticker||'')+'\')">'+
-        '<div class="port-pos-left">'+
-          '<span class="port-pos-ticker">'+esc(p.ticker||'')+'</span>'+
-          '<span class="port-pos-name">'+esc(p.name||'')+'</span>'+
-        '</div>'+
-        '<div class="port-pos-right">'+
-          '<div class="port-pos-pnl '+(pnl>=0?'pos':'neg')+'">'+pnlStr+'</div>'+
-          '<div class="port-pos-detail">'+shares+(value?'$'+parseFloat(value).toFixed(0):'')+'</div>'+
-        '</div>'+
-      '</div>';
+    tbody.innerHTML = port.map(p => {
+      const entry   = parseFloat(p.entry_price)||0;
+      const current  = parseFloat(p.current_price)||0;
+      const shares   = p.shares != null ? p.shares : '—';
+      const value    = p.value != null ? '$'+parseFloat(p.value).toFixed(0) : '—';
+      const pnl      = p.pnl_pct != null ? p.pnl_pct : (entry && current ? (current-entry)/entry*100 : null);
+      const pnlStr   = pnl != null ? (pnl>=0?'+':'')+pnl.toFixed(1)+'%' : '—';
+      const pnlCls   = pnl!=null ? (pnl>=0?'pos-val':'neg-val') : '';
+      const thesis    = p.thesis ? '<span class="position-card .rationale">'+E(p.thesis).substring(0,100)+'</span>' : '';
+      return '<tr onclick="openPortModal(\''+E(p.ticker||'')+'\')">'+
+        '<td><strong>'+E(p.ticker||'')+'</strong></td>'+
+        '<td><span class="ticker-name">'+E(p.name||'')+'</span></td>'+
+        '<td>'+shares+'</td>'+
+        '<td>'+(entry?'$'+entry.toFixed(2):'—')+'</td>'+
+        '<td>'+(current?'$'+current.toFixed(2):'—')+'</td>'+
+        '<td class="'+pnlCls+'">'+pnlStr+'</td>'+
+        '<td>'+value+'</td>'+
+        '<td><span class="ticker-name">'+thesis+'</span></td>'+
+        '</tr>';
     }).join('');
   }
 
@@ -396,26 +481,30 @@
   function openModal(id) {
     const s = (data.stockIdeas||[]).find(x=>x.id===id);
     if (!s) return;
-    document.getElementById('m-ticker').textContent = s.ticker||'';
+    document.getElementById('m-ticker').textContent = s.ticker||'—';
     document.getElementById('m-meta').textContent = [s.name,s.sector,s.country,s.exchange].filter(Boolean).join(' · ');
 
     const pairs = [
-      ['Rating',s.rating],['Status',s.status],['Sector',s.sector],
-      ['Country',s.country],['Exchange',s.exchange],
-      ['Div Yield', s.dividend_yield_pct!=null?s.dividend_yield_pct+'%':null],
-      ['Earnings',s.next_earnings_date],['Dividend',s.next_dividend_ex_date],
-      ['Catalyst',s.next_catalyst_date],
-    ].filter(a=>a[1]!=null);
+      ['Rating', s.rating, true],
+      ['Status', s.status],
+      ['Sector', s.sector],
+      ['Country', s.country],
+      ['Exchange', s.exchange],
+      ['Div Yield', s.dividend_yield_pct!=null ? s.dividend_yield_pct+'%' : null],
+      ['Earnings', s.next_earnings_date],
+      ['Dividend', s.next_dividend_ex_date],
+      ['Catalyst', s.next_catalyst_date],
+    ];
 
     let body = '<div class="modal-section"><div class="modal-grid">';
-    body += '<div class="modal-field"><div class="lbl">Rating</div><div class="val" style="color:'+ratingColor(s.rating)+'">'+(s.rating||'—')+'</div></div>';
-    body += pairs.slice(1).map(a=>'<div class="modal-field"><div class="lbl">'+a[0]+'</div><div class="val">'+esc(String(a[1]))+'</div></div>').join('');
+    body += '<div class="modal-field"><div class="lbl">Rating</div><div class="val '+ratingClass(s.rating)+'" style="color:var(--accent)">'+s.rating+'</div></div>';
+    body += pairs.slice(1).filter(a=>a[1]!=null).map(a=>'<div class="modal-field"><div class="lbl">'+a[0]+'</div><div class="val">'+E(String(a[1]))+'</div></div>').join('');
     body += '</div></div>';
 
-    if (s.short_overview) body += '<div class="modal-section"><h4>Short Overview</h4><div class="modal-text">'+esc(s.short_overview)+'</div></div>';
-    if (s.investment_rationale) body += '<div class="modal-section"><h4>Investment Rationale</h4><div class="modal-text">'+esc(s.investment_rationale)+'</div></div>';
-    if (s.notes) body += '<div class="modal-section"><h4>Notes</h4><div class="modal-text">'+esc(s.notes)+'</div></div>';
-    if (s.next_catalyst_date) body += '<div class="modal-section"><h4>Next Catalyst</h4><div class="modal-catalyst"><strong>'+esc(s.next_catalyst_date)+'</strong> — '+esc(s.next_catalyst_description||'')+'</div></div>';
+    if (s.short_overview) body += '<div class="modal-section"><h3>Short Overview</h3><div class="text-block">'+E(s.short_overview)+'</div></div>';
+    if (s.investment_rationale) body += '<div class="modal-section"><h3>Investment Rationale</h3><div class="text-block">'+E(s.investment_rationale)+'</div></div>';
+    if (s.notes) body += '<div class="modal-section"><h3>Notes</h3><div class="text-block">'+E(s.notes)+'</div></div>';
+    if (s.next_catalyst_date) body += '<div class="modal-section"><h3>Next Catalyst</h3><div class="catalyst-block"><strong>📅 '+E(s.next_catalyst_date)+'</strong> — '+E(s.next_catalyst_description||'')+'</div></div>';
 
     document.getElementById('m-body').innerHTML = body;
     document.getElementById('modal').classList.add('open');
@@ -433,14 +522,8 @@
   }
   document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
 
-  // ── Helpers ──
-  function ratingColor(r) {
-    if (r>=9) return '#af38eb';
-    if (r>=8) return '#3b82f6';
-    if (r>=7) return '#22c55e';
-    return '#d97706';
-  }
-  function esc(s) {
+  // ── Escape helper ──
+  function E(s) {
     if (s==null) return '';
     const d = document.createElement('div');
     d.textContent = String(s);
