@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-26T06:03:05.763Z",
+  "updated": "2026-03-27T05:02:25.047Z",
   "stockIdeas": [
     {
       "id": 32,
@@ -7,9 +7,9 @@
       "name": "CAB Payments Holdings Limited",
       "source": "Yellowbrick",
       "date_added": "2026-03-21 00:32:08",
-      "status": "completed",
+      "status": "pending",
       "rating": 8,
-      "investment_rationale": "B2B FX/payments for frontier markets (Africa). 2H25 rev +33% YoY, EBITDA +73% YoY. StoneX bid £1.45 vs £0.70. 100% upside.",
+      "investment_rationale": "StoneX £241M offer (~$320M) REJECTED March 2026 as undervaluing. Helios had 85p offer. Stock at 78.5p — below both offers. M&A arb still live. Bidding war potential.",
       "sector": "Financial Services",
       "country": "UK",
       "exchange": "LSE",
@@ -25,7 +25,7 @@
       "latest_report_url": null,
       "next_report_date": "2026-04-15",
       "completed_at": "2026-03-21 08:49:31",
-      "last_updated": "2026-03-21 00:32:08"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 73,
@@ -35,8 +35,8 @@
       "date_added": "2026-03-21",
       "status": "completed",
       "rating": 8,
-      "investment_rationale": "Japanese net-net at 0.4x NCAV, 0.38x TBV. -¥11.5B EV vs ¥6.6B mcap. ¥9.9B cash + ¥8.69B securities covers mcap 2x. Zero debt, 82% equity ratio. PT ¥9,237 vs ¥3,280. Classic net-net.",
-      "sector": "Real Estate",
+      "investment_rationale": "Japanese net-net. ¥3.7B cash > market cap. ¥20B current assets > mkt cap. Q3 ¥3.35 EPS. Low 5x P/E. Building/construction play.",
+      "sector": "Consumer Discretionary",
       "country": "Japan",
       "exchange": "TSE",
       "next_earnings_date": null,
@@ -51,7 +51,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1p4skjYlw-kfEHSRJ6H5trC_QffQ-i2vqXNrttaQJKlo/edit?usp=drivesdk",
       "next_report_date": null,
       "completed_at": "2026-03-21 09:40:36",
-      "last_updated": "2026-03-21 09:40:36"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 76,
@@ -77,33 +77,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1mE83eL_tyzRtPETurL7RnkReTGtjpav8NpNFSPeJ3Pg/edit?usp=drivesdk",
       "next_report_date": null,
       "completed_at": "2026-03-21 09:40:36",
-      "last_updated": "2026-03-21 09:40:36"
-    },
-    {
-      "id": 85,
-      "ticker": "CPH.TO",
-      "name": "Cipher Pharmaceuticals Inc.",
-      "source": "Yellowbrick",
-      "date_added": "2026-03-21",
-      "status": "completed",
-      "rating": 8,
-      "investment_rationale": "Natroba drove $30M rev (+150% YoY), $17.4M EBITDA at 83% margin. $35M debt retired, now net cash $2.5M w/ $85M+ firepower. 28-rep US sales force = sunk cost for future M&A. Trades 11x EV/EBITDA vs 12-18x peers. Canada Natroba approval expected end-2026.",
-      "sector": "Healthcare",
-      "country": "Canada",
-      "exchange": "TSX",
-      "next_earnings_date": null,
-      "next_dividend_ex_date": null,
-      "dividend_yield_pct": "N/A",
-      "next_catalyst_date": "2026-12-31",
-      "next_catalyst_description": "Canada Natroba approval decision; potential M&A announcement",
-      "short_overview": "Natroba $30M at 83% GM + legacy pharma. 2025 EBITDA $28M at 56% margin. Debt-free w/ $85M firepower. Canada approval end-2026 = zero-capex growth. Trades 7-8x EV/EBITDA vs 12-18x peers. PT $21.37. M&A catalyst.",
-      "key_competitors": "Cipher Pharma, Bausch Health, Collegium",
-      "commodity_exposure": null,
-      "report_file": null,
-      "latest_report_url": "https://docs.google.com/document/d/1luDXTA6qfR7E5a2awTUfJGpvA7ehJbKd_cqsN0M2bMg/edit?usp=drivesdk",
-      "next_report_date": null,
-      "completed_at": "2026-03-21 09:40:36",
-      "last_updated": "2026-03-21 09:40:36"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 169,
@@ -113,14 +87,14 @@
       "date_added": "2026-03-05",
       "status": "completed",
       "rating": 8,
-      "investment_rationale": "Norwegian North Sea E&P (oil/gas). 36.8% non-op stake in DUC (TotalEnergies operator). Q4 prod 42.4k boepd record. Tyra redevelopment complete = harvest phase. 14x P/E, 30%+ fwd div yield. PT NOK 894 (+66%). Q4 div NOK 42.84 ex-date 3/24/26. 50% gas hedged at ~35 EUR/MWh. $13/boe lifting costs.",
+      "investment_rationale": "Q4 2025 record production: 42.4 mboepd (highest ever). Q4 dividend $115M proposed. Feb 2026: 43.6 mboepd. Tyra hub ramp-up strong. Next earnings May 6 2026.",
       "sector": "Energy",
       "country": "Norway",
       "exchange": "Oslo",
       "next_earnings_date": null,
       "next_dividend_ex_date": null,
       "dividend_yield_pct": "22-30%",
-      "next_catalyst_date": "2026-04-01",
+      "next_catalyst_date": "2026-05-06",
       "next_catalyst_description": "Q4 2025 dividend ex-date March 24, 2026 — NOK 42.84/share",
       "short_overview": "Norwegian oil & gas E&P. DUC asset (TotalEnergies-operated). 36.8% stake. Q4 42.4k boepd record production. NOK 1.4B mcap. 14x P/E. 30%+ div yield. Commodity hedge via natural gas exposure.",
       "key_competitors": null,
@@ -129,7 +103,33 @@
       "latest_report_url": "https://docs.google.com/document/d/1-om8DK0OYo5D2p6L1OXo1mG9MJfgwcTmOssust2g2ZU/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 20:11:32",
-      "last_updated": "2026-03-21 13:28:11"
+      "last_updated": "2026-03-26"
+    },
+    {
+      "id": 246,
+      "ticker": "CLDB",
+      "name": "CareCloud Inc",
+      "source": "Bilbel Capital",
+      "date_added": "2026-03-26",
+      "status": "completed",
+      "rating": 7,
+      "investment_rationale": "CONFIRMED (from Q4 2025 presentation): FY2025 Revenue $128.9M (+31%). Non-GAAP EBITDA $24.6M (+34%). FY2026 guide: Revenue $148-158M, EBITDA $30-33M. Company guidance. Bilbel estimates ($38M) slightly above company midpoint ($31.5M). Market cap $115M = 3.7x forward EBITDA. Still cheap.",
+      "sector": "Healthcare",
+      "country": "USA",
+      "exchange": "NASDAQ",
+      "next_earnings_date": "2026-05",
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "0 (common); 8.75\\% on preferred Series A and B",
+      "next_catalyst_date": "Q1 2026 earnings",
+      "next_catalyst_description": "Q1 2026 Earnings Report — watch for EPS vs $0.20-$0.23 guide, Medsphere integration retention",
+      "short_overview": "Small-cap healthcare SaaS. FY2025: $120.5M revenue, $0.10 GAAP EPS (first positive since IPO), 7th consecutive quarter of GAAP net income. Medsphere acquisition opens inpatient market. AI (stratusAI) live. $28.6M operating cash flow. Rating: 7/10 Speculative Buy.",
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": "Stocks/CLDB/CLDB_2026-03-26.md",
+      "latest_report_url": null,
+      "next_report_date": "2026-05-01",
+      "completed_at": "2026-03-26 10:51:06",
+      "last_updated": "2026-03-26"
     },
     {
       "id": 218,
@@ -155,7 +155,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1lXUyHWNJJLWtInvgZdTg_v6qd-Y2a4V8ZtmmLpUfVpI/edit",
       "next_report_date": null,
       "completed_at": null,
-      "last_updated": "2026-03-25 07:48:10"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 186,
@@ -181,7 +181,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1RS961M6YE5875mJN0rWuonLEuJ_IHCTjIQYwmVPm8a8/edit",
       "next_report_date": null,
       "completed_at": null,
-      "last_updated": "2026-03-23T20:19:05.324180"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 188,
@@ -207,7 +207,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1SPcspF-Nx7fRm9Pvs-Pb8KQKRCfLvfxAFWf615abXYA/edit",
       "next_report_date": null,
       "completed_at": null,
-      "last_updated": "2026-03-23T20:19:05.324798"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 189,
@@ -233,33 +233,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1ax3VbCFy1H30ilic274qH6lYyxKVF6ftL7mvt9Lm-04/edit",
       "next_report_date": null,
       "completed_at": null,
-      "last_updated": "2026-03-23T20:19:05.324817"
-    },
-    {
-      "id": 199,
-      "ticker": "MU",
-      "name": "Micron Technology, Inc.",
-      "source": "Yellowbrick",
-      "date_added": "2026-03-23",
-      "status": "completed",
-      "rating": 7,
-      "investment_rationale": "NEUTRAL: Q2 $23.86B revenue +196%, Q3 guide $33.5B vs $22.5B est, HBM sold out FY27",
-      "sector": "Technology",
-      "country": "USA",
-      "exchange": "NASDAQ",
-      "next_earnings_date": "April 2026 (est, Q2 FY2026)",
-      "next_dividend_ex_date": "2026-03-30",
-      "dividend_yield_pct": "0.14",
-      "next_catalyst_date": "2026-03-30",
-      "next_catalyst_description": "Ex-dividend March 30 ($0.15/share). Q3 FY2026 earnings expected June. HBM supply agreement announcements.",
-      "short_overview": "AI memory supercycle play. Record Q2 FY2026: $23.86B revenue, $12.20 EPS, 75% gross margins. HBM demand insatiable. $422 stock, 15-17x PE.",
-      "key_competitors": "Samsung Electronics, SK Hynix, Western Digital (WDC), Kioxia",
-      "commodity_exposure": "High (silicon wafers, chemicals, equipment)",
-      "report_file": "Stocks/MU/MU_2026-03-23.md",
-      "latest_report_url": "https://docs.google.com/document/d/1-oURW-3i96CFsthxlwMKykzuiiBAmoRq4nau_fV7dpA/edit",
-      "next_report_date": null,
-      "completed_at": null,
-      "last_updated": "2026-03-23T20:19:05.324839"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 200,
@@ -285,7 +259,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1l6TrNblqvBY4vNDKSSF6RLLaRZlFeiER92QTW9X2YzM/edit",
       "next_report_date": null,
       "completed_at": null,
-      "last_updated": "2026-03-23T20:19:05.324848"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 118,
@@ -311,7 +285,7 @@
       "latest_report_url": "https://docs.google.com/document/d/193yVvjo5hKZPrsghIDOdn1BzP4uzhBBrmlcmarN1IUQ/edit",
       "next_report_date": "2026-05-01",
       "completed_at": "2026-03-21 11:22:01",
-      "last_updated": "2026-03-21 11:22:01"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 11,
@@ -337,7 +311,7 @@
       "latest_report_url": null,
       "next_report_date": "2026-05-15",
       "completed_at": "2026-03-21 08:36:18",
-      "last_updated": "2026-03-21 00:32:08"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 24,
@@ -363,7 +337,7 @@
       "latest_report_url": null,
       "next_report_date": "2026-04-01",
       "completed_at": "2026-03-21 08:45:17",
-      "last_updated": "2026-03-21 00:32:08"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 46,
@@ -389,7 +363,7 @@
       "latest_report_url": null,
       "next_report_date": "2026-05-11",
       "completed_at": "2026-03-21 08:54:13",
-      "last_updated": "2026-03-21 00:32:08"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 47,
@@ -415,7 +389,7 @@
       "latest_report_url": null,
       "next_report_date": "2026-05-07",
       "completed_at": "2026-03-21 08:55:40",
-      "last_updated": "2026-03-21 00:32:08"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 77,
@@ -441,7 +415,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1IuyBe7qGOqirshTh75kzKU1mMXLqck8M_QwoYBbEJ-I/edit?usp=drivesdk",
       "next_report_date": null,
       "completed_at": "2026-03-21 09:40:36",
-      "last_updated": "2026-03-21 09:40:36"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 78,
@@ -467,7 +441,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1qSZBMNFMBkN9OAS1bZrBq47PWN4aiPgyFjEYkFk38s8/edit?usp=drivesdk",
       "next_report_date": null,
       "completed_at": "2026-03-21 09:40:36",
-      "last_updated": "2026-03-21 09:40:36"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 80,
@@ -493,7 +467,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1BdhnP57QKrjAN21B5lb_fWncJVyxbmBf1af4pZBchoU/edit?usp=drivesdk",
       "next_report_date": null,
       "completed_at": "2026-03-21 09:40:36",
-      "last_updated": "2026-03-21 09:40:36"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 82,
@@ -519,7 +493,33 @@
       "latest_report_url": "https://docs.google.com/document/d/1_drU2A5D2k3bOum39sZWikVzE-qfJgbL607PG6Q9Lj8/edit?usp=drivesdk",
       "next_report_date": null,
       "completed_at": "2026-03-21 09:40:36",
-      "last_updated": "2026-03-21 09:40:36"
+      "last_updated": "2026-03-26"
+    },
+    {
+      "id": 85,
+      "ticker": "CPH.TO",
+      "name": "Cipher Pharmaceuticals Inc.",
+      "source": "Yellowbrick",
+      "date_added": "2026-03-21",
+      "status": "completed",
+      "rating": 7,
+      "investment_rationale": "Health Canada accepted Natroba New Drug Submission Jan 2026. Regulatory decision expected LATE 2026. Natroba is KEY catalyst — US approval was main thesis. Health Canada approval = validation.",
+      "sector": "Healthcare",
+      "country": "Canada",
+      "exchange": "TSX",
+      "next_earnings_date": null,
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "N/A",
+      "next_catalyst_date": "2026-12-31",
+      "next_catalyst_description": "Canada Natroba approval decision; potential M&A announcement",
+      "short_overview": "Natroba $30M at 83% GM + legacy pharma. 2025 EBITDA $28M at 56% margin. Debt-free w/ $85M firepower. Canada approval end-2026 = zero-capex growth. Trades 7-8x EV/EBITDA vs 12-18x peers. PT $21.37. M&A catalyst.",
+      "key_competitors": "Cipher Pharma, Bausch Health, Collegium",
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": "https://docs.google.com/document/d/1luDXTA6qfR7E5a2awTUfJGpvA7ehJbKd_cqsN0M2bMg/edit?usp=drivesdk",
+      "next_report_date": null,
+      "completed_at": "2026-03-21 09:40:36",
+      "last_updated": "2026-03-26"
     },
     {
       "id": 2,
@@ -545,7 +545,7 @@
       "latest_report_url": null,
       "next_report_date": null,
       "completed_at": null,
-      "last_updated": "2026-03-20T17:54:49.552988"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 6,
@@ -555,49 +555,23 @@
       "date_added": "2026-03-20 16:54:49",
       "status": "completed",
       "rating": 7,
-      "investment_rationale": "High-growth wearable tech (41.8% YoY revenue growth to $258.9M) transitioning to platform/services model. Unprofitable (-$40.1M net loss) but investing for future.",
+      "investment_rationale": "Wearable tech: 40%+ rev growth, 40.4% gross margin. $7.85/share net cash vs $13 stock. Helio Glasses late 2026. Analyst PT $59-68. Down -70% from highs on China ADR sentiment, not fundamentals.",
       "sector": null,
       "country": null,
       "exchange": null,
-      "next_earnings_date": null,
+      "next_earnings_date": "2026-05-01",
       "next_dividend_ex_date": null,
       "dividend_yield_pct": null,
       "next_catalyst_date": "2026-05-01",
       "next_catalyst_description": "Q1 2026 earnings. Guide vs. $50-55M midpoint, path to profitability, Helio Strap Gen 2 demand, platform/subscription metrics.",
-      "short_overview": null,
+      "short_overview": "Smart wearables brand (Amazfit). Q4 2025: $85.2M (+43%), 40.4% gross margin. $112.9M cash, $7.85/share net cash. Helio Glasses (late 2026).",
       "key_competitors": null,
       "commodity_exposure": null,
       "report_file": "Stocks/ZEPP/ZEPP_2026-03-26.md",
-      "latest_report_url": null,
+      "latest_report_url": "https://docs.google.com/document/d/1HCmsMX8UsuBTmuQ5KaX63p2Ui3lkczbUiznfK2LgeFg/edit",
       "next_report_date": null,
       "completed_at": "2026-03-26 04:00:00",
-      "last_updated": "2026-03-26 04:00:00"
-    },
-    {
-      "id": 94,
-      "ticker": "AVAP.L",
-      "name": "Avation PLC",
-      "source": "Yellowbrick",
-      "date_added": "2026-03-18",
-      "status": "completed",
-      "rating": 7,
-      "investment_rationale": "[BULLISH] trades £1.33 vs £4.07 NAV, aircraft lease anomaly | Author: The Oak Bloke | Trades: 174 | 1Y: 29.6% | Cap: $137M | PT upside: 211%",
-      "sector": "Industrials",
-      "country": "UK",
-      "exchange": "LSE",
-      "next_earnings_date": null,
-      "next_dividend_ex_date": null,
-      "dividend_yield_pct": "N/A (buybacks ongoing)",
-      "next_catalyst_date": "2026-04-01",
-      "next_catalyst_description": "First new ATR 72-600 delivery to Cambodia Airways (12yr lease); Air Baltic insurance claim settlement expected shortly; Braathens ATR re-letting",
-      "short_overview": "Aircraft leasing co; 33 aircraft, fully utilized, 51-66% discount to NAV. Refinancing risk eliminated (2026 maturity gone). Buybacks at 147p ongoing. Air Baltic insurance recovery ($33.4M) and new ATR deliveries are near-term catalysts.",
-      "key_competitors": null,
-      "commodity_exposure": null,
-      "report_file": "Stocks/AVAP.L/AVAP.L_2026-03-18.md",
-      "latest_report_url": "https://docs.google.com/document/d/14VRKeqj6miJWR2Fs9P3CDkNAwuzxoYmvq8HlmE-59aw/edit?usp=drivesdk",
-      "next_report_date": null,
-      "completed_at": null,
-      "last_updated": "2026-03-21 10:53:47"
+      "last_updated": "2026-03-27"
     },
     {
       "id": 101,
@@ -607,10 +581,10 @@
       "date_added": "2026-03-17",
       "status": "completed",
       "rating": 7,
-      "investment_rationale": "[BULLISH] Largest EU fitness chain reached FCF inflection: €26M FCF in 2025 (vs -€88M '24). 5.8M members (+36% YoY). 13x P/FCF. | Author: Summit Stocks",
-      "sector": null,
-      "country": null,
-      "exchange": null,
+      "investment_rationale": "FY2025 results met January trading update. FY2026 guidance reiterated. Shares +2.2% on results. 1st positive FCF year (€26M vs -€88M). Capex cut expanding margins.",
+      "sector": "Consumer Discretionary",
+      "country": "Netherlands",
+      "exchange": "Euronext",
       "next_earnings_date": null,
       "next_dividend_ex_date": null,
       "dividend_yield_pct": null,
@@ -623,7 +597,7 @@
       "latest_report_url": "https://docs.google.com/document/d/17PYF6ldEQVNLRfe5sqn7aifXy0G1zREGbKzkVz8-Q5k/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 20:15:52",
-      "last_updated": "2026-03-21 11:06:24"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 115,
@@ -649,7 +623,7 @@
       "latest_report_url": "https://docs.google.com/document/d/16JLmdMahdMsX9voVg5dU_e0tuV73pnosuLqmTKHafI4/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 11:25:14",
-      "last_updated": "2026-03-21 11:21:50"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 122,
@@ -675,7 +649,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1oQZFfZg7bR4onPVh__QUvwOQU7KvMhum955W34upCjA/edit",
       "next_report_date": "2026-03-13",
       "completed_at": "2026-03-13",
-      "last_updated": "2026-03-21 12:00:51"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 123,
@@ -701,7 +675,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1MxLLydPX4kdTTurREGmwK9-HJFBICL4E-UtjbzpIR7Y/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 20:12:56",
-      "last_updated": "2026-03-21 11:55:24"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 128,
@@ -727,7 +701,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1JzqC2k_rcPJdqqCJHrQJz7ZgXpwQ4izPNMUKEzVKdlw/edit",
       "next_report_date": "2026-04-23",
       "completed_at": "2026-03-21 20:08:37",
-      "last_updated": "2026-03-21 11:55:24"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 133,
@@ -753,7 +727,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1ABTrUoEnoHMIF3SCBkor7cuJ3GUQJmgi8Gm016C0yN8/edit",
       "next_report_date": "2026-02-28",
       "completed_at": "2026-03-13",
-      "last_updated": "2026-03-21 12:00:51"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 157,
@@ -779,7 +753,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1G34zE5bc9LRNwkIH4tvAy4lZv8WoIZByf4BImFLFcRU/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 14:48:10",
-      "last_updated": "2026-03-21 13:26:39"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 161,
@@ -805,7 +779,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1QCai3KfG1s4W8NyhtviuxZ89lo5gfLVJ9SlCf4Fqom0/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 14:51:55",
-      "last_updated": "2026-03-21 13:26:39"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 162,
@@ -831,7 +805,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1393710x3Te0itLHjCkAOl_IdJGN4ykO0dDbO6-9qemU/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 14:55:16",
-      "last_updated": "2026-03-21 13:26:39"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 172,
@@ -857,7 +831,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1dQpGNacH2arrlYUTFgTer1OPq1WCyHuYV05rv-7wrd8/edit",
       "next_report_date": null,
       "completed_at": "2026-03-21 13:32:17",
-      "last_updated": "2026-03-21 13:28:35"
+      "last_updated": "2026-03-26"
     },
     {
       "id": 168,
@@ -883,7 +857,85 @@
       "latest_report_url": "https://docs.google.com/document/d/1VB7Bj2F5kPd8_kU_h0CTKPvccQbMXR7UcL5mCFl-8h8/edit",
       "next_report_date": "2026-04-21",
       "completed_at": "2026-03-21 14:30:00",
-      "last_updated": "2026-03-21 13:28:11"
+      "last_updated": "2026-03-26"
+    },
+    {
+      "id": 247,
+      "ticker": "WGR",
+      "name": "Western Gold Resources Ltd",
+      "source": "Eric from Netherlands",
+      "date_added": "2026-03-26",
+      "status": "pending",
+      "rating": 6,
+      "investment_rationale": "Gold explorer transitioning to producer. Gold Duke Project: first gold early 2026. A$241M NAV at $3,500 gold vs A$58M market cap (4x upside). Eric from Netherlands biggest position.",
+      "sector": "Materials",
+      "country": "Australia",
+      "exchange": "ASX",
+      "next_earnings_date": "2026-03-26",
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "N/A",
+      "next_catalyst_date": "First gold production (imminent)",
+      "next_catalyst_description": null,
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": "/home/timilv/.openclaw/workspace/Stocks/WGR/WGR_2026-03-26.md",
+      "latest_report_url": "https://docs.google.com/document/d/13vfHrXIX2Wf_cvc6pKjFS-FCJbDvJWd-ymbNNfkg0Dk/edit?usp=drivesdk",
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26"
+    },
+    {
+      "id": 249,
+      "ticker": "PLOW",
+      "name": "Douglas Dynamics",
+      "source": "Hidden Gems Investing",
+      "date_added": "2026-03-26",
+      "status": "completed",
+      "rating": 6,
+      "investment_rationale": "Snow plow oligopoly (50%+ US/CA market share). P/E 20.86x, 2.9% div. Q4 +43.7% revenue surge. Was $26 in Jan 2025, now $40 — pitch already made. Seasonal/weather risk.",
+      "sector": "Industrials",
+      "country": "USA",
+      "exchange": "NYSE",
+      "next_earnings_date": "2026-05",
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "2.9%",
+      "next_catalyst_date": "2026-05",
+      "next_catalyst_description": null,
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": null,
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26"
+    },
+    {
+      "id": 250,
+      "ticker": "WMA",
+      "name": "WindowMaster A/S",
+      "source": "Eric from Netherlands",
+      "date_added": "2026-03-26",
+      "status": "pending",
+      "rating": 6,
+      "investment_rationale": "Smart building ventilation. 70.5% gross margin. 2026 EBIT guide DKK 31-32M. Stock at DKK 1.18 — way below intrinsic value if they execute. 52wk high DKK 2.22, now -47%. EU sustainability regs tailwind.",
+      "sector": "Industrials",
+      "country": "Denmark",
+      "exchange": "Nasdaq Copenhagen",
+      "next_earnings_date": "2026-Q1",
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "N/A",
+      "next_catalyst_date": "2026-Q1 momentum",
+      "next_catalyst_description": null,
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": null,
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26"
     },
     {
       "id": 224,
@@ -1222,6 +1274,32 @@
       "next_report_date": null,
       "completed_at": null,
       "last_updated": "2026-03-23 19:11:47"
+    },
+    {
+      "id": 199,
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "source": "Yellowbrick",
+      "date_added": "2026-03-23",
+      "status": "completed",
+      "rating": 6,
+      "investment_rationale": "HBM AI demand real but stock at $382 = 25-30x P/E for cyclical. Was BUY at $85-120. No margin of safety left. Hold if owned, don't buy new here. April 2 earnings is key catalyst.",
+      "sector": "Technology",
+      "country": "USA",
+      "exchange": "NASDAQ",
+      "next_earnings_date": "2026-04-02",
+      "next_dividend_ex_date": "2026-03-30",
+      "dividend_yield_pct": "0.14",
+      "next_catalyst_date": "2026-04-02",
+      "next_catalyst_description": "Q2 FY2026 earnings — April 2",
+      "short_overview": "AI memory supercycle play. Record Q2 FY2026: $23.86B revenue, $12.20 EPS, 75% gross margins. HBM demand insatiable. $422 stock, 15-17x PE.",
+      "key_competitors": "Samsung Electronics, SK Hynix, Western Digital (WDC), Kioxia",
+      "commodity_exposure": "High (silicon wafers, chemicals, equipment)",
+      "report_file": "Stocks/MU/MU_2026-03-23.md",
+      "latest_report_url": "https://docs.google.com/document/d/1-oURW-3i96CFsthxlwMKykzuiiBAmoRq4nau_fV7dpA/edit",
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26"
     },
     {
       "id": 203,
@@ -1985,7 +2063,7 @@
       "date_added": "2026-03-20 16:54:49",
       "status": "completed",
       "rating": 6,
-      "investment_rationale": "High-risk medtech playing ALLY laser system. Alcon deal dead (FTC opposition, Mar 16), stock crashed to ~$6. FCF near breakeven, BTIG upgraded to Buy ($10 PT, Mar 17). Competitive moat narrow but growing. March 31 strategic update is critical for standalone thesis. Capital raise likely needed — watch for dilution risk.",
+      "investment_rationale": "High-risk medtech playing ALLY laser system. Alcon deal dead (FTC opposition, Mar 16), stock crashed to ~$5.56. FCF near breakeven, BTIG upgraded to Buy ($10 PT). March 31 strategic update is critical — must validate standalone thesis. Capital raise needed; dilution risk.",
       "sector": null,
       "country": null,
       "exchange": null,
@@ -1993,7 +2071,7 @@
       "next_dividend_ex_date": null,
       "dividend_yield_pct": null,
       "next_catalyst_date": "2026-03-31",
-      "next_catalyst_description": "CRITICAL: Q4 + FY2025 results + standalone strategic update (8:30am ET conf call). Merger dead, stock crashed ~50% since Mar 16. BTIG Buy/$10 PT = ~80% upside from ~$5.56. Capital raise likely — watch for size/dilution. Mar 31 must address: FY2026 guidance, standalone growth plan, path to profitability, international expansion, ALLY placements.",
+      "next_catalyst_description": "CRITICAL: Q4 + FY2025 results + standalone strategic update (8:30am ET conf call). Merger dead, stock crashed ~63% from $15 to ~$5.56. BTIG Buy/$10 PT (~80% upside). Capital raise likely — watch for size/dilution. Mar 31 must address: FY2026 guidance, standalone growth plan, path to profitability, ALLY placements, international expansion.",
       "short_overview": "Alcon deal dead. FTC opposition. LNSR retained $10M deposit. Stock crashed ~63% from 52wk high $15 to ~$5.56 (Mar 24). BTIG Buy/$10 PT. Mar 31 strategic update critical for standalone thesis validation.",
       "key_competitors": null,
       "commodity_exposure": null,
@@ -2001,7 +2079,7 @@
       "latest_report_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001320350&type=10-K&dateb=&owner=include&count=5",
       "next_report_date": "2026-05-01",
       "completed_at": "2026-03-20 18:44:13",
-      "last_updated": "2026-03-25 21:05:00"
+      "last_updated": "2026-03-26 21:05:52"
     },
     {
       "id": 92,
@@ -2028,6 +2106,32 @@
       "next_report_date": null,
       "completed_at": null,
       "last_updated": "2026-03-21 10:53:47"
+    },
+    {
+      "id": 94,
+      "ticker": "AVAP.L",
+      "name": "Avation PLC",
+      "source": "Yellowbrick",
+      "date_added": "2026-03-18",
+      "status": "pending",
+      "rating": 6,
+      "investment_rationale": "Annual Report 2025 filed. ATR 72-600 aircraft transitioning to new leases (6-year lease signed). Trades 18% discount to NAV. Asset sales above book value.",
+      "sector": "Financial Services",
+      "country": "UK",
+      "exchange": "LSE",
+      "next_earnings_date": null,
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "N/A (buybacks ongoing)",
+      "next_catalyst_date": "2026-04-01",
+      "next_catalyst_description": "First new ATR 72-600 delivery to Cambodia Airways (12yr lease); Air Baltic insurance claim settlement expected shortly; Braathens ATR re-letting",
+      "short_overview": "Aircraft leasing co; 33 aircraft, fully utilized, 51-66% discount to NAV. Refinancing risk eliminated (2026 maturity gone). Buybacks at 147p ongoing. Air Baltic insurance recovery ($33.4M) and new ATR deliveries are near-term catalysts.",
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": "Stocks/AVAP.L/AVAP.L_2026-03-18.md",
+      "latest_report_url": "https://docs.google.com/document/d/14VRKeqj6miJWR2Fs9P3CDkNAwuzxoYmvq8HlmE-59aw/edit?usp=drivesdk",
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26"
     },
     {
       "id": 102,
@@ -2418,6 +2522,136 @@
       "next_report_date": null,
       "completed_at": null,
       "last_updated": "2026-03-21 13:28:35"
+    },
+    {
+      "id": 252,
+      "ticker": "ASRT",
+      "name": "Assertio Holdings, Inc.",
+      "source": "Yellowbrick",
+      "date_added": "2026-03-26 19:37:27",
+      "status": "pending",
+      "rating": 5,
+      "investment_rationale": "Pharma co w/ Rolvedon (oncology, IP through 2039) at 70%+ revenue, 32% POS growth 2025. Trades 0.3x 2026E EBITDA. 30% EBITDA margins. New CEO ex-Astellas. $42.80 PT (5x EBITDA) = 130% upside.",
+      "sector": "Pharmaceuticals",
+      "country": "US",
+      "exchange": "US",
+      "next_earnings_date": null,
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": null,
+      "next_catalyst_date": "2026-06-01",
+      "next_catalyst_description": "Q2 2026 AR collections - $75M FCF expected from collections",
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": null,
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26 19:37:27"
+    },
+    {
+      "id": 253,
+      "ticker": "KBR",
+      "name": "KBR, Inc.",
+      "source": "Yellowbrick",
+      "date_added": "2026-03-26 19:37:27",
+      "status": "pending",
+      "rating": 5,
+      "investment_rationale": "Transforming from low-margin EPC to higher-quality services/tech (MTS govt services 55% EBITDA, STS process tech 45%). Trading ~8x EBITDA vs peers 11-13x. CY25 headwinds lapping mid-CY26. SOTP 12x = material upside by CY28. Strong FCF, aggressive buybacks.",
+      "sector": "Professional Services",
+      "country": "US",
+      "exchange": "US",
+      "next_earnings_date": null,
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "1.74",
+      "next_catalyst_date": "2026-09-01",
+      "next_catalyst_description": "MTS spin-off announcement expected mid-2026",
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": null,
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26 19:37:27"
+    },
+    {
+      "id": 254,
+      "ticker": "NOMD",
+      "name": "Nomad Foods Limited.",
+      "source": "Yellowbrick",
+      "date_added": "2026-03-26 19:37:27",
+      "status": "pending",
+      "rating": 5,
+      "investment_rationale": "Europe's largest frozen food co (Birds Eye, iglo, Findus) at decade-low valuation. 8.8% FCF yield, 6.8% dividend. Management retired 26.7% of shares since 2019. 18.3% insider ownership. Price negotiations to restore historical 7%+ margins. DCF fair value $18.23 vs ~$9.69.",
+      "sector": "Food Products",
+      "country": "UK",
+      "exchange": "UK",
+      "next_earnings_date": null,
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "6.96",
+      "next_catalyst_date": "2026-05-01",
+      "next_catalyst_description": "Margin recovery and price negotiation outcomes",
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": null,
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26 19:37:27"
+    },
+    {
+      "id": 248,
+      "ticker": "SOMA",
+      "name": "Soma Gold Corp",
+      "source": "Eric from Netherlands",
+      "date_added": "2026-03-26",
+      "status": "pending",
+      "rating": 5,
+      "investment_rationale": "Canadian gold producer in Colombia. C$50M mkt cap vs C$16.7M cash. 2026 target: 37,000 oz (2x 2025). If executed: 1x FCF. But missed targets 2 years running — execution risk.",
+      "sector": "Materials",
+      "country": "Canada",
+      "exchange": "TSX-V",
+      "next_earnings_date": "2026-05",
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "N/A",
+      "next_catalyst_date": "2026-03-26",
+      "next_catalyst_description": null,
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": null,
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26"
+    },
+    {
+      "id": 251,
+      "ticker": "LEEF",
+      "name": "Leef Brands Inc",
+      "source": "Eric from Netherlands",
+      "date_added": "2026-03-26",
+      "status": "pending",
+      "rating": 5,
+      "investment_rationale": "CORRECTED: Q4 EBITDA +$1.0M (POSITIVE)! H2 2025: +$1.7M. FY2025: -$0.4M (vs -$2.4M FY2024). Cannabis beverages. 35% rev growth. H2 EBITDA positive = approaching breakeven.",
+      "sector": "Healthcare",
+      "country": "Canada",
+      "exchange": "CNSX",
+      "next_earnings_date": "2026-05",
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": "N/A",
+      "next_catalyst_date": "Q4 FY2025 results",
+      "next_catalyst_description": null,
+      "short_overview": null,
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": null,
+      "latest_report_url": null,
+      "next_report_date": null,
+      "completed_at": null,
+      "last_updated": "2026-03-26"
     },
     {
       "id": 219,
@@ -6144,7 +6378,7 @@
       "name": "Avation PLC",
       "shares": null,
       "entry_price": null,
-      "current_price": 128,
+      "current_price": 130,
       "pnl_pct": null,
       "stop_loss": 110.00000000000001,
       "target_price": 200,
@@ -6157,7 +6391,7 @@
       "name": "Basic-Fit NV",
       "shares": null,
       "entry_price": null,
-      "current_price": 29.78,
+      "current_price": 31.16,
       "pnl_pct": null,
       "stop_loss": 24,
       "target_price": 42,
@@ -6170,7 +6404,7 @@
       "name": "BlueNord ASA",
       "shares": null,
       "entry_price": null,
-      "current_price": 48.05,
+      "current_price": 49.2,
       "pnl_pct": null,
       "stop_loss": 44,
       "target_price": 75,
@@ -6196,7 +6430,7 @@
       "name": "Sable Offshore Corp",
       "shares": null,
       "entry_price": null,
-      "current_price": 16.81,
+      "current_price": 17.69,
       "pnl_pct": null,
       "stop_loss": 12,
       "target_price": 24,
