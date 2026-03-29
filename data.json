@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-28T06:02:11.722Z",
+  "updated": "2026-03-29T05:02:47.753Z",
   "stockIdeas": [
     {
       "id": 32,
@@ -548,6 +548,32 @@
       "last_updated": "2026-03-27"
     },
     {
+      "id": 3,
+      "ticker": "LNSR",
+      "name": "LENSAR, Inc.",
+      "source": "Yellowbrick",
+      "date_added": "2026-03-20 16:54:49",
+      "status": "completed",
+      "rating": 7,
+      "investment_rationale": "High-risk medtech playing ALLY laser system. Alcon deal dead (FTC opposition, Mar 16), stock crashed from 15 to 5.52 but recovered to ~7.65 pre-mkt. FCF near breakeven, BTIG upgraded to Buy ($10 PT). March 31 strategic update CRITICAL for standalone thesis validation. Capital raise likely; dilution risk. ~31-64% upside to analyst PT if strategic update is credible.",
+      "sector": null,
+      "country": null,
+      "exchange": null,
+      "next_earnings_date": null,
+      "next_dividend_ex_date": null,
+      "dividend_yield_pct": null,
+      "next_catalyst_date": "2026-03-31",
+      "next_catalyst_description": "CRITICAL: Q4 + FY2025 results + standalone strategic update (8:30am ET conf call). Stock bounced to ~7.65 pre-mkt — market positioning bullishly. Capital raise likely. Mar 31 must address: FY2026 guidance, standalone growth plan, path to profitability, ALLY placements, international expansion, capital needs.",
+      "short_overview": "Merger dead. FTC blocked Alcon deal, terminated Mar 16. LNSR retained $10M deposit. Stock crashed from 15 to 5.52 low (Mar 26) but recovered to ~7.65 pre-mkt (Mar 28, +25%). BTIG Buy/$10 PT. Mar 31 strategic update CRITICAL for standalone thesis validation. Capital raise imminent — watch for size/dilution. Rating: BUY-7.",
+      "key_competitors": null,
+      "commodity_exposure": null,
+      "report_file": "stock_analysis_LNSR_2026-03-28.md",
+      "latest_report_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001320350&type=10-K&dateb=&owner=include&count=5",
+      "next_report_date": "2026-05-01",
+      "completed_at": "2026-03-20 18:44:13",
+      "last_updated": "2026-03-28 21:05:00"
+    },
+    {
       "id": 6,
       "ticker": "ZEPP",
       "name": "Zepp Health Corporation",
@@ -571,7 +597,7 @@
       "latest_report_url": "https://docs.google.com/document/d/1HCmsMX8UsuBTmuQ5KaX63p2Ui3lkczbUiznfK2LgeFg/edit",
       "next_report_date": null,
       "completed_at": "2026-03-26 04:00:00",
-      "last_updated": "2026-03-27"
+      "last_updated": "2026-03-29"
     },
     {
       "id": 101,
@@ -2184,32 +2210,6 @@
       "next_report_date": null,
       "completed_at": null,
       "last_updated": "2026-03-20T17:54:49.548476"
-    },
-    {
-      "id": 3,
-      "ticker": "LNSR",
-      "name": "LENSAR, Inc.",
-      "source": "Yellowbrick",
-      "date_added": "2026-03-20 16:54:49",
-      "status": "completed",
-      "rating": 6,
-      "investment_rationale": "High-risk medtech playing ALLY laser system. Alcon deal dead (FTC opposition, Mar 16), stock crashed to ~5.56 but recovered to ~6.05. FCF near breakeven, BTIG upgraded to Buy ($10 PT). March 31 strategic update is critical — must validate standalone thesis. Capital raise needed; dilution risk. ~65-107% upside to analyst PTs if strategic update is credible.",
-      "sector": null,
-      "country": null,
-      "exchange": null,
-      "next_earnings_date": null,
-      "next_dividend_ex_date": null,
-      "dividend_yield_pct": null,
-      "next_catalyst_date": "2026-03-31",
-      "next_catalyst_description": "CRITICAL: Q4 + FY2025 results + standalone strategic update (8:30am ET conf call). Merger dead, stock crashed ~63% from $15 to ~$5.56. BTIG Buy/$10 PT (~80% upside). Capital raise likely — watch for size/dilution. Mar 31 must address: FY2026 guidance, standalone growth plan, path to profitability, ALLY placements, international expansion.",
-      "short_overview": "Alcon deal dead. FTC opposition. LNSR retained $10M deposit. Stock crashed ~63% from 52wk high $15 to ~$5.56 (Mar 24). BTIG Buy/$10 PT. Mar 31 strategic update critical for standalone thesis validation.",
-      "key_competitors": null,
-      "commodity_exposure": null,
-      "report_file": "stock_analysis_LNSR_2026-03-27.md",
-      "latest_report_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001320350&type=10-K&dateb=&owner=include&count=5",
-      "next_report_date": "2026-05-01",
-      "completed_at": "2026-03-20 18:44:13",
-      "last_updated": "2026-03-27 21:04:30"
     },
     {
       "id": 92,
